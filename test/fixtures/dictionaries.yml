@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  main_word: MyString
+  pronounce: MyString
+  type: 
+  meaning: MyString
+  example: MyText
+
+two:
+  main_word: MyString
+  pronounce: MyString
+  type: 
+  meaning: MyString
+  example: MyText
