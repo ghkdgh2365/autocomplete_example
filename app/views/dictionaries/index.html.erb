@@ -1,35 +1,2405 @@
-<p id="notice"><%= notice %></p>
+<html lang="ko"><head>
 
-<h1>Listing Dictionaries</h1>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=1000">
+<meta name="robots" content="index,nofollow">
+<meta name="keywords" content="사전, 어학사전,네이버사전메인,네이버사전홈,dictionary, naver dictionary,辞書、ネイバー辞書词典，naver词典">
+<meta name="description" content="네이버 어학사전, 지식백과 검색을 제공">
 
-<table>
-  <thead>
-    <tr>
-      <th>Main word</th>
-      <th>Pronounce</th>
-      <th>Type</th>
-      <th>Meaning</th>
-      <th>Example</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<!-- social meta tag 문구 및 아이콘 정의 -->
+<meta property="og:title" content="네이버 사전 (NAVER dictionary)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="네이버 사전 (NAVER dictionary)">
+<meta property="og:description" content="33종 언어사전과 방대한 지식백과를 제공">
+<meta property="og:image" content="http://dicimg.naver.com/dic-home-service/img/ogtag/02_icon.png">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate " content="en_US">
 
-  <tbody>
-    <% @dictionaries.each do |dictionary| %>
-      <tr>
-        <td><%= dictionary.main_word %></td>
-        <td><%= dictionary.pronounce %></td>
-        <td><%= dictionary.type %></td>
-        <td><%= dictionary.meaning %></td>
-        <td><%= dictionary.example %></td>
-        <td><%= link_to 'Show', dictionary %></td>
-        <td><%= link_to 'Edit', edit_dictionary_path(dictionary) %></td>
-        <td><%= link_to 'Destroy', dictionary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@NAVER_dictionary">
+<meta name="twitter:title" content="네이버 사전 (NAVER dictionary)">
+<meta name="twitter:description" content="33종 언어사전과 방대한 지식백과를 제공">
+<meta name="twitter:image" content="http://dicimg.naver.com/dic-home-service/img/ogtag/02_icon.png">
+<script type="text/javascript">
+	var globalDummyParam = "2017112621";
+</script>
+<title>네이버 사전&nbsp;(NAVER dictionary)</title>
+<link rel="shortcut icon" href="http://dicimg.naver.net/favicons/dic-mobile/v2/Favicon.ico" type="image/x-icon">
 
-<br>
 
+
+<style id="gnb_style" type="text/css">@charset "UTF-8";
+/* NTS UIT Development Office YJH 140717 */
+a.gnb_my, .gnb_icon, #gnb .gnb_my_interface, #gnb .gnb_ico_num .gnb_ico_new, #gnb .gnb_ico_num .gnb_ico_new .gnb_count, .gnb_lst .ico_arrow, .gnb_my_lyr, .gnb_my_li .gnb_my_content .gnb_mask, .gnb_my_li .gnb_my_content .gnb_change, .gnb_my_li .gnb_my_content .gnb_edit_lst li, .gnb_my_li .gnb_my_content .gnb_pay_check em, #gnb .gnb_my_li .gnb_my_community a.gnb_pay span, .gnb_notice_li .gnb_notice_lyr, .gnb_notice_li .svc_list .gnb_ico_mail, .gnb_notice_li .svc_list .gnb_btn_remove span, .gnb_notice_li .svc_list .gnb_btn_remove i, .gnb_notice_li .gnb_error .gnb_ico_error, .gnb_ly_alert .gnb_btn_close i, .gnb_first_visit, .gnb_search_box, .gnb_search_box .gnb_del_txt, .gnb_svc_more .gnb_svc_lstwrp li.gnb_event em.ic_gnb_new, .gnb_svc_more .svc_btnwrp button{background:url(https://ssl.pstatic.net/static/common/gnb/one/sp_gnb_v13.png) no-repeat -999px -999px}
+.gnb_favorite_area, .gnb_search_area, .gnb_banner, .gnb_linkwrp{background:url(https://ssl.pstatic.net/static/common/gnb/2014/bg_svclyr2_v2.png) no-repeat -999px -999px}
+#gnb .gnb_my_li .gnb_my_community a, .gnb_notice_li .gnb_notice_all, a.gnb_service_all, .gnb_svc_more .svc_btns{display:block;height:38px;border-top:1px solid #ebebeb;background-color:#f8f8f8;text-align:center;font-weight:bold;text-decoration:none;letter-spacing:-1px;line-height:38px}
+#gnb .gnb_my_li .gnb_my_community a:visited, .gnb_notice_li .gnb_notice_all:visited, a.gnb_service_all:visited, .gnb_svc_more .svc_btns:visited{color:#444}
+.gnb_login_li, .gnb_my_li, .gnb_notice_li, .mail_li, .gnb_service_li{float:left;margin-right:2px;overflow:visible}
+.gnb_login_li a, .gnb_my_li a, .gnb_notice_li a, .mail_li a, .gnb_service_li a{position:relative;z-index:100}
+a.gnb_my, .gnb_icon{position:relative}
+#gnb{position:relative;z-index:2147483646;font-family:'나눔고딕',NanumGothic,'돋움',Dotum,'Apple SD Gothic Neo',Helvetica,Sans-serif !important;color:#444;font-size:12px;letter-spacing:0 !important;line-height:normal !important;text-align:left !important}
+#gnb div, #gnb p, #gnb span, #gnb em, #gnb strong, #gnb h1, #gnb h2, #gnb h3, #gnb h4, #gnb h5, #gnb h6, #gnb ul, #gnb ol, #gnb li, #gnb dl, #gnb dt, #gnb dd, #gnb table, #gnb th, #gnb td, #gnb form, #gnb fieldset, #gnb legend, #gnb input, #gnb textarea, #gnb button, #gnb label{font-family:'나눔고딕',NanumGothic,'돋움',Dotum,'Apple SD Gothic Neo',Helvetica,Sans-serif !important}
+#gnb a, #gnb label, #gnb button{cursor:pointer}
+#gnb a, #gnb a:visited, #gnb a:active, #gnb a:focus{color:#444}
+#gnb a:hover{color:#444;text-decoration:underline}
+#gnb input::-ms-clear{display:none}
+#gnb em{font-style:normal}
+#gnb ul{list-style:none}
+#gnb .blind{display:block;overflow:hidden;position:absolute;top:-1000em;left:0;width:1px;height:1px;margin:0;padding:0;font-size:0;line-height:0}
+#gnb .gnb_my_interface{padding:5px;position:absolute;top:12px;right:8px;display:block;width:17px;height:16px;background-position:-90px 5px}
+#gnb .gnb_my_interface:hover{background-position:-90px -20px}
+#gnb .gnb_pad_lyr{position:absolute}
+#gnb .gnb_ico_num{display:block;position:absolute;top:1px;width:40px;text-align:center}
+#gnb .gnb_ico_num .gnb_ico_new{height:15px;display:inline-block;background-position:-331px 0;zoom:1}
+#gnb .gnb_ico_num .gnb_ico_new .gnb_count{position:relative;top:0;right:-5px;height:15px;margin:0;padding:0 4px 0 1px;display:inline-block;*display:inline;vertical-align:top;background-position:100% 0;text-indent:-2px;font-family:tahoma !important;font-weight:bold;color:#fff;zoom:1}
+#gnb .gnb_ico_num .gnb_ico_new .plus{margin:1px -1px 0 2px;font-size:8px;display:inline-block;color:#fff;vertical-align:top}
+:root #gnb .gnb_pad_lyr{opacity:1 !important;background:#fff}
+.gnb_lst{margin:0;padding:0;zoom:1}
+.gnb_lst:after{display:block;clear:both;content:''}
+.gnb_lst ul{margin:0;padding:0}
+.gnb_lst .ico_arrow{display:none;position:absolute;left:50%;top:27px;width:10px;height:8px;margin-left:-5px;background-position:-175px -10px}
+.gnb_lyr_opened .gnb_my_lyr, .gnb_lyr_opened .gnb_service_lyr, .gnb_lyr_opened .gnb_notice_lyr, .gnb_lyr_opened .ico_arrow{display:block !important}
+.gnb_login_li{height:23px;padding:5px 7px 0 0}
+.gnb_btn_login, .gnb_bg, .gnb_bdr{display:inline-block;width:46px;height:20px;font-size:12px}
+.gnb_btn_login{position:relative}
+.gnb_bg{background-color:#fff}
+.gnb_bdr{position:absolute;top:0;left:0;width:44px;height:18px;border:1px solid #000;opacity:0.15;filter:alpha(opacity=15)}
+.gnb_txt{position:absolute;top:0;left:0;width:45px;height:20px;padding-left:1px;line-height:21px;color:#666;text-align:center}
+.gnb_btn_login:hover{text-decoration:none !important}
+.gnb_btn_login:hover .gnb_bdr{opacity:0.35;filter:alpha(opacity=35)}
+.gnb_account .gnb_btn_login{width:54px;margin:-1px 0 0 4px;vertical-align:top}
+.gnb_account .gnb_bdr{width:52px}
+.gnb_account .gnb_txt{width:53px}
+.gnb_my_li{margin-right:7px}
+.gnb_my_namebox{padding:2px 9px 0 0;background-repeat:no-repeat;background-position:100% 50%;zoom:1}
+.gnb_my_namebox:after{display:block;clear:both;content:''}
+a.gnb_my{float:left;display:block;font-size:0;vertical-align:middle}
+a.gnb_my img{vertical-align:top;border-radius:16px}
+a.gnb_my .gnb_name{margin-right:-1px;padding-left:5px;display:inline-block;height:28px;line-height:28px;vertical-align:top;font-size:11px;color:#444}
+a.gnb_my:visited{color:#444}
+a.gnb_my:hover, a.gnb_my:active, a.gnb_my:visited, a.gnb_my:focus{text-decoration:none !important}
+a.gnb_my:hover .gnb_name{text-decoration:underline}
+a.gnb_my .ico_arrow{top:25px;margin-left:8px}
+.gnb_my_namebox a.gnb_emp{float:left;display:inline-block;height:28px;margin-left:3px;line-height:28px;font-size:11px;color:#777 !important}
+.gnb_my_lyr{display:none;position:absolute;top:26px;right:-8px;padding:9px 5px 4px 4px;width:316px;height:172px;background-position:-2px -1310px;z-index:10}
+.gnb_my_lyr.gnb_groupid{height:144px;background-position:-2px -1500px}
+.gnb_my_lyr.gnb_groupid .gnb_my_content{height:80px}
+.gnb_my_lyr.gnb_groupid.gnb_longid1{height:144px;background-position:-2px -1664px}
+.gnb_my_lyr.gnb_groupid.gnb_longid2{height:144px;background-position:-2px -1828px}
+.gnb_my_lyr.gnb_longid1{width:318px;background-position:-2px -1118px}
+.gnb_my_lyr.gnb_longid2{width:348px;background-position:-2px -926px}
+.gnb_my_li .gnb_my_content{zoom:1;height:108px;padding:15px 0 10px 15px}
+.gnb_my_li .gnb_my_content:after{display:block;clear:both;content:''}
+.gnb_my_li .gnb_my_content .gnb_img_area{float:left;position:relative;display:block;width:80px}
+.gnb_my_li .gnb_my_content .gnb_img_area img{vertical-align:top}
+.gnb_my_li .gnb_my_content .gnb_mask{position:absolute;top:0;left:0;display:block;width:80px;height:80px;background-position:-70px -60px}
+.gnb_my_li .gnb_my_content .gnb_change{position:absolute;bottom:-2px;left:-2px;display:block;width:28px;height:28px;background-position:-140px 0px}
+.gnb_my_li .gnb_my_content .gnb_change:hover{background-position:-140px -30px}
+.gnb_my_li .gnb_my_content .gnb_txt_area{float:left;width:212px;margin:5px 0 0 9px}
+.gnb_longid1 .gnb_my_content .gnb_txt_area{width:210px}
+.gnb_longid2 .gnb_my_content .gnb_txt_area{width:235px}
+.gnb_my_li .gnb_my_content .gnb_account{margin-bottom:3px;font-size:0}
+.gnb_my_li .gnb_my_content .gnb_name{color:#777;font-size:14px}
+.gnb_my_li .gnb_my_content .gnb_name a{display:inline-block;vertical-align:top;font-weight:bold;color:#444}
+.gnb_my_li .gnb_my_content a.gnb_mail_address{font-family:tahoma;color:#777 !important;font-size:14px}
+.gnb_my_li .gnb_my_content .gnb_edit_lst{zoom:1;margin-top:9px !important}
+.gnb_my_li .gnb_my_content .gnb_edit_lst:after{display:block;clear:both;content:''}
+.gnb_my_li .gnb_my_content .gnb_edit_lst li{float:left;padding-left:8px;margin-left:8px;background-position:-290px -25px}
+.gnb_my_li .gnb_my_content .gnb_edit_lst li.gnb_info{padding-left:0;margin-left:0;background:none}
+.gnb_my_li .gnb_my_content .gnb_edit_lst a{color:#019a30 !important;text-decoration:underline;letter-spacing:-1px}
+.gnb_my_li .gnb_my_content .gnb_pay_check{height:16px;margin:16px -4px 0 0 !important}
+@media screen and (min-width: 0\0) { .gnb_my_li .gnb_my_content .gnb_pay_check{margin-top:17px} }
+.gnb_my_li .gnb_my_content .gnb_pay_check em{display:inline-block;width:16px;height:16px;background-position:-300px -309px;margin:0 4px 0 0;overflow:hidden;font-size:0;line-height:0;vertical-align:top}
+.gnb_my_li .gnb_my_content .gnb_pay_check a{font-size:14px;letter-spacing:-1px;line-height:16px;vertical-align:top}
+.gnb_my_li .gnb_my_content .gnb_pay_check span{padding-right:5px}
+.gnb_my_li .gnb_my_content .gnb_pay_check strong{font-family:tahoma;letter-spacing:0;word-spacing:-30px}
+.gnb_my_li .gnb_my_content .gnb_pay_check a, .gnb_my_li .gnb_my_content .gnb_pay_check span, .gnb_my_li .gnb_my_content .gnb_pay_check strong{font-size:14px;color:#019a30 !important}
+#gnb .gnb_my_li .gnb_my_community{clear:both;zoom:1}
+#gnb .gnb_my_li .gnb_my_community:after{display:block;clear:both;content:''}
+#gnb .gnb_my_li .gnb_my_community a{float:left;width:106px;margin-right: 0;border-right:1px solid #ebebeb}
+#gnb .gnb_my_li .gnb_my_community a.gnb_pay{width:102px;border-right:0;line-height:0}
+#gnb .gnb_my_li .gnb_my_community a.gnb_pay span{display:inline-block;width:41px;height:16px;background-position:-300px -334px;margin:11px auto 0;font-size:0;line-height:0}
+#gnb .gnb_my_li .gnb_my_community a:active, #gnb .gnb_my_li .gnb_my_community a:focus, #gnb .gnb_my_li .gnb_my_community a:visited{text-decoration:none !important}
+#gnb .gnb_my_li .gnb_my_community a:hover{text-decoration:underline !important}
+#gnb .gnb_my_lyr.gnb_longid1 .gnb_my_community a{width:105px}
+#gnb .gnb_my_lyr.gnb_longid1 .gnb_my_community a.gnb_pay{width:106px}
+#gnb .gnb_my_lyr.gnb_longid2 .gnb_my_community a{width:115px}
+#gnb .gnb_my_lyr.gnb_longid2 .gnb_my_community a.gnb_pay{width:116px}
+#gnb.gnb_one .gnb_my_community a, #gnb.gnb_one_small .gnb_my_community a{margin-right: 0 !important;}
+.gnb_notice_li a.gnb_notice{display:block;width:15px;height:17px;padding:7px 9px 4px;text-decoration:none !important}
+.gnb_notice_li a.gnb_notice .gnb_ico_num{left:1px;top:0}
+.gnb_notice_li a.gnb_notice .gnb_icon{display:block;width:15px;height:17px;background-position:-3px -60px}
+.gnb_notice_li a.gnb_notice:hover .gnb_icon{background-position:-38px -60px;text-decoration:none !important}
+.gnb_notice_li .gnb_notice_lyr{display:none;position:absolute;top:26px;right:-7px;width:297px;height:330px;padding:9px 4px 4px;background-position:-2px -584px;z-index:10;overflow:hidden}
+.gnb_notice_li .svc_scroll{height:291px;overflow:scroll;overflow-x:hidden;position:relative;zoom:1}
+.gnb_notice_li .svc_panel{width:100%;height:330px;overflow:hidden}
+.gnb_notice_li .svc_head{position:relative;height:36px;padding-left:15px;line-height:20px;border-bottom:1px solid #eaeaea;zoom:1}
+.gnb_notice_li .svc_head .gnb_tit{color:#6b6d70;margin-right:1px;line-height:36px}
+.gnb_notice_li .svc_head .task_right{position:absolute;right:8px;top:8px;font-size:0}
+.gnb_notice_li .svc_head .task_right button{height:20px;padding:0 6px;margin-left:4px;border:1px solid #ddd;color:#888;background-color:#fff;font-family:'나눔고딕', NanumGothic;font-size:12px;letter-spacing:-1px;line-height:18px;*line-height:16px;overflow:visible}
+.gnb_notice_li .svc_list .gnb_btn_remove i, .gnb_notice_li .svc_list .gnb_btn_remove span, .gnb_notice_li .svc_noti .gnb_ico_mail, .gnb_notice_li .svc_blank .svc_msg_box, .gnb_notice_li .svc_blank .gnb_v_guide{display:inline-block;*display:inline;*zoom:1}
+.gnb_notice_li .svc_list{margin-top:-1px}
+.gnb_notice_li .svc_list li{position:relative;padding:7px 34px 7px 15px;border-top:1px solid #eaeaea;line-height:18px}
+.gnb_notice_li .svc_list .gnb_new{background:#ffffd8}
+.gnb_notice_li .svc_list .gnb_unread .gnb_subject{color:#444}
+.gnb_notice_li .svc_list .gnb_unread .d_cnt{color:#ff630e}
+.gnb_notice_li .svc_list .gnb_unread a:hover .gnb_subject, .gnb_notice_li .svc_list .gnb_unread .gnb_unread a:hover .d_cnt{color:#390}
+.gnb_notice_li .svc_list .gnb_unread .svc_name{color:#444}
+.gnb_notice_li .svc_list a.gnb_list_cover{text-decoration:none !important;display:block;position:relative;zoom:1}
+.gnb_notice_li .svc_list a:hover .gnb_subject{text-decoration:underline}
+.gnb_notice_li .svc_list .gnb_subject{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%;color:#adadad}
+.gnb_notice_li .svc_list .d_cnt{font-family:tahoma;font-size:10px}
+.gnb_notice_li .svc_list .gnb_info{color:#adadad}
+.gnb_notice_li .svc_list .svc_name{margin-right:3px;color:#adadad}
+.gnb_notice_li .svc_list .cchr{margin-right:3px}
+.gnb_notice_li .svc_list .dona{position:absolute;top:8px;right:34px;text-decoration:underline}
+.gnb_notice_li .svc_list .dona a{color:#adadad}
+.gnb_notice_li .svc_list .dona a:hover{color:#390}
+.gnb_notice_li .svc_list .gnb_ico_mail{width:14px;height:15px;font-size:0;line-height:0;color:#fff;vertical-align:top}
+.gnb_notice_li .svc_list .gnb_ico_mail.gnb_yes{background-position:-245px -17px}
+.gnb_notice_li .svc_list .gnb_ico_mail.gnb_no{background-position:-245px 4px}
+.gnb_notice_li .svc_list .gnb_btn_remove{position:absolute;right:4px;top:50%;z-index:100;margin-top:-13px;padding:10px;line-height:6px;font-size:0;background:none !important;border:0 !important}
+.gnb_notice_li .svc_list .gnb_btn_remove span, .gnb_notice_li .svc_list .gnb_btn_remove i{display:block !important;width:7px;height:7px;font-size:0;line-height:0;color:transparent;white-space:nowrap;overflow:hidden;vertical-align:top;background-position:-175px 0}
+.gnb_notice_li .svc_blank{position:absolute;top:104px;left:0;width:100%;white-space:nowrap;height:100px;font-size:0;text-align:center}
+.gnb_notice_li .svc_blank .svc_msg_box{white-space:normal;font-size:12px;width:100%}
+.gnb_notice_li .svc_blank .gnb_tit{display:block;color:#2f3743;font-size:14px;margin:0 0 15px}
+.gnb_notice_li .svc_blank .gnb_tit strong{font-weight:normal;color:#390}
+.gnb_notice_li .svc_blank .gnb_desc{line-height:19px;color:#2f3743;margin-bottom:7px}
+.gnb_notice_li .svc_blank .gnb_desc a, .gnb_notice_li .svc_blank .gnb_link{color:#390;text-decoration:underline}
+.gnb_notice_li .svc_blank .gnb_v_guide{vertical-align:middle;height:100%;width:0}
+.gnb_notice_li .svc_blank .gnb_link_wrap{text-align:center}
+.gnb_notice_li .svc_blank .gnb_link_wrap .gnb_link{display:block;width:40px;margin:0 auto !important;text-align:center}
+.gnb_notice_li .svc_loading{background:url(https://ssl.pstatic.net/static/www/2014/loading.gif) no-repeat #fff center center;position:absolute;top:33px;left:0;width:100%;height:245px}
+.gnb_notice_li .gnb_error{position:absolute;top:81px;left:2px;width:100%;color:#444;text-align:center}
+.gnb_notice_li .gnb_error .gnb_ico_error{display:inline-block;width:57px;height:57px;background-position:-280px -190px}
+.gnb_notice_li .gnb_error .gnb_tit{font-size:14px;margin:15px 0 11px}
+.gnb_notice_li .gnb_error .gnb_desc{margin-bottom:13px;line-height:18px}
+.gnb_notice_li .gnb_error .gnb_link{text-decoration:underline}
+.gnb_ly_alert{position:absolute;top:110px;left:13px;background-color:#fff;border:1px solid #b7b9bc;width:260px;padding:34px 0 20px;zoom:1;z-index:100}
+.gnb_ly_alert .gnb_msg{text-align:center;line-height:17px;margin-bottom:14px;color:#2f3743}
+.gnb_.ly_alert .gnb_btn_close{position:absolute;right:2px;top:0;*overflow:visible}
+.gnb_ly_alert .gnb_btns{text-align:center}
+.gnb_ly_alert .gnb_btns button{height:27px;line-height:27px;*line-height:22px;font-weight:bold;font-size:12px;padding:0 8px;color:#2f3743;border:1px solid #ddd;background-color:white}
+.gnb_ly_alert .gnb_btns button:first-child{margin-right:4px}
+.gnb_ly_alert .gnb_btn_close{position:absolute;right:2px;top:0;width:35px;border:0;background:none;cursor:pointer;border-radius:0;padding:10px}
+.gnb_ly_alert .gnb_btn_close i{display:block;width:15px;height:15px;font:0/0 a;color:transparent;white-space:nowrap;overflow:hidden;vertical-align:top;background-position:-240px -60px}
+.mail_li a.gnb_mail{display:block;width:20px;height:15px;padding:7px 9px 6px;text-decoration:none !important}
+.mail_li a.gnb_mail .gnb_icon{display:block;width:20px;height:15px;background-position:0px -95px}
+.mail_li a.gnb_mail:hover .gnb_icon{background-position:-35px -95px;text-decoration:none !important}
+.mail_li .gnb_ico_num{left:6px;top:0}
+.gnb_service_li{margin-right:0}
+.gnb_service_li a.gnb_service{display:block;width:16px;height:16px;padding:7px 9px 5px}
+.gnb_service_li a.gnb_service .gnb_icon{display:block;width:16px;height:16px;background-position:-2px -130px}
+.gnb_service_li a.gnb_service:hover .gnb_icon{background-position:-37px -130px;text-decoration:none !important}
+.gnb_service_li .gnb_service_lyr{display:none;position:absolute;top:27px;right:-7px;z-index:10}
+.gnb_favorite_search{width:301px;letter-spacing:-1px}
+.gnb_response .gnb_favorite_search{display:none}
+.gnb_favorite_area{height:93px;padding:8px 4px 0;background-position:0 0}
+.gnb_favorite_lstwrp{position:relative;padding:22px 1px 15px 15px;border-bottom:1px solid #ebebeb}
+.gnb_favorite_lstwrp .gnb_my_interface{top:3px !important;right:3px !important}
+.gnb_first_visit{position:absolute;top:0;left:0;width:293px;height:92px;background-position:0 -310px;z-index:200}
+.gnb_first_visit .gnb_close{position:absolute;top:0;right:0;display:block;width:32px;height:32px}
+.gnb_favorite_lst{zoom:1}
+.gnb_favorite_lst:after{display:block;clear:both;content:''}
+.gnb_favorite_lst li{float:left;width:65px;text-align:center;white-space:nowrap}
+.gnb_favorite_lst a{display:inline-block;text-align:center;font-weight:bold}
+.gnb_favorite_lst .gnb_add a{display:block;test-align:center;}
+.gnb_favorite_lst .gnb_add a span.ic_add{display: block;width: 36px;height: 36px;margin: 0 auto 4px;background-image: url(https://ssl.pstatic.net/static/common/gnb/one/sp_gnb_4b16e6.png);background-position: 0px 0px;background-repeat: no-repeat;width: 36px;height: 36px;vertical-align: top;}
+.gnb_favorite_lst .gnb_add a:hover span.ic_add{background-image: url(https://ssl.pstatic.net/static/common/gnb/one/sp_gnb_4b16e6.png);background-position: -42px 0px;background-repeat: no-repeat;width: 36px;height: 36px;vertical-align: top;}
+.gnb_favorite_lst img{display:block;margin:0 auto 4px;vertical-align:top}
+.gnb_search_area{position:relative;z-index:200;padding:18px 4px 17px;background-position:-301px 0;background-repeat:repeat-y}
+.gnb_search_box{position:relative;z-index:101;margin:0 12px 16px 0;padding-left:10px;display:block;width:270px;height:35px;background-position:10px -190px}
+.gnb_search_box.over{background-position:10px -230px}
+.gnb_search_box.fcs{background-position:10px -270px}
+.gnb_search_box.fcs input{width:200px;font-size:16px;font-weight:bold;color:#444;outline:0}
+.gnb_search_box input{float:left;display:block;width:210px;height:22px;margin-top:6px;padding-left:10px;font-family:'나눔고딕',NamumGothic;letter-spacing:-1px;color:#adadad;font-size:13px;border:0;line-height:22px;background:transparent}
+.gnb_search_box .gnb_del_txt{position:absolute;top:8px;right:32px;display:block;width:17px;height:17px;background-position:-190px 0px}
+.gnb_search_box .gnb_del_txt:hover{background-position:-190px -20px}
+.gnb_search_box .gnb_pop_input{position:absolute;top:34px;left:10px;width:268px;height:170px;*height:172px;border:1px solid #cbc5c5;border-top:0;background:#fff;overflow-x:hidden;overflow-y:scroll;z-index:110}
+.gnb_search_box .gnb_pop_lst{padding:4px 0 2px}
+.gnb_search_box .gnb_pop_lst a{display:block;padding:6px 0 6px 10px;font-weight:bold}
+.gnb_search_box .gnb_pop_lst .on{background-color:#f5f5f5}
+.gnb_search_lstwrp{zoom:1;height:118px;padding-left:12px}
+.gnb_search_lstwrp:after{display:block;clear:both;content:''}
+.gnb_search_lstwrp .gnb_search_lst{float:left;width:69px;border-left:1px solid #eaeaea}
+.gnb_search_lstwrp .gnb_search_lst.gnb_first{width:64px;border:0}
+.gnb_search_lstwrp li{padding:12px 0 0 8px}
+.gnb_search_lstwrp li.gnb_first{font-weight:bold;padding-top:0}
+.gnb_search_lstwrp li a{display:inline-block;vertical-align:top}
+.gnb_banner{height:47px;margin:0;padding:0 18px;background-position:-301px 0;background-repeat:repeat-y}
+.gnb_banner .gnb_service_event{display:inline-block;border-top:1px solid #ebebeb}
+.gnb_linkwrp{padding:0 4px 4px;background-position:-602px 0}
+a.gnb_service_all:hover, a.gnb_service_all:visited, a.gnb_service_all:active, a.gnb_service_all:focus{text-decoration:none}
+.gnb_svc_more{display:none;position:absolute;top:4px;right:303px;width:589px;overflow:hidden;zoom:1;z-index:1000}
+.gnb_svc_more:after{display:block;clear:both;content:''}
+.gnb_response .gnb_svc_more{right:2px}
+.gnb_bg_top{height:6px;background:url(https://ssl.pstatic.net/static/common/gnb/2014/bg_svclyr1_v2.png) no-repeat}
+.gnb_bg_btm{position:relative;height:6px;background:url(https://ssl.pstatic.net/static/common/gnb/2014/bg_svclyr1_v2.png) no-repeat -1282px 0}
+.gnb_svc_more .gnb_svc_hd{position:relative;padding:0 18px 2px 23px;letter-spacing:-1px;background:url(https://ssl.pstatic.net/static/common/gnb/2014/bg_svclyr1_v2.png) repeat-y -641px 0}
+.gnb_svc_more .gnb_svc_hd .gnb_svc_tit{display:block;padding:12px 0 13px;border-bottom:1px solid #ebebeb;font-size:14px;color:#222}
+.gnb_svc_more .gnb_svc_hd .link{position:absolute;top:14px;right:19px;font-size:12px;color:#444}
+.gnb_svc_more .gnb_svc_hd .link a{color:#444 !important;line-height:16px !important}
+.gnb_svc_more .gnb_svc_lstwrp{position:relative;height:283px;overflow:hidden;padding:15px 15px 0 20px;letter-spacing:-1px;background:url(https://ssl.pstatic.net/static/common/gnb/2014/bg_svclyr1_v2.png) repeat-y -641px 0;zoom:1}
+.gnb_svc_more .gnb_svc_lstwrp:after{display:block;clear:both;content:''}
+.gnb_svc_more .gnb_svc_lstwrp li{height:15px;margin-bottom:5px;color:#6b6d70;white-space:nowrap;line-height:15px}
+.gnb_svc_more .gnb_svc_lstwrp li.gnb_event label{color:#444;font-weight:bold}
+.gnb_svc_more .gnb_svc_lstwrp li.gnb_event em.ic_gnb_new{display:inline-block;width:11px;height:11px;background-position:-215px 0px;margin:2px 0 0 4px;font-size:0;line-height:0;vertical-align:top}
+@media screen and (min-width: 0\0) { .gnb_svc_more .gnb_svc_lstwrp li.gnb_event em.ic{margin-top:3px} }
+.gnb_svc_more .gnb_svc_lstwrp .gnb_input_check{width:13px;height:13px;margin:2px 3px 0 3px;padding:0;vertical-align:top}
+.gnb_svc_more .gnb_svc_lstwrp label{vertical-align:0px}
+.gnb_svc_more .gnb_svc_lstwrp .gnb_disabled strong{color:#a8acb0}
+.gnb_svc_more .gnb_svc_lstwrp .gnb_disabled li{color:#cbcbcb}
+.gnb_svc_more .gnb_svc_lst1{float:left;width:328px;height:280px}
+.gnb_svc_more .gnb_svc_lst1 ul{float:left;width:102px;min-height:260px;padding:5px 0 0 10px;border-left:1px solid #eee}
+.gnb_svc_more .gnb_svc_lst1 ul.gnb_first{padding-left:0;border:0}
+.gnb_svc_more .svc_lst2{float:left;position:relative;width:221px;border:1px solid #eee;background:#fbfbfb;zoom:1}
+.gnb_svc_more .svc_lst2:after{display:block;clear:both;content:''}
+.gnb_svc_more .svc_spc{float:left;position:relative;width:100px;min-height:254px;padding:9px 0 0 10px}
+.gnb_svc_more .svc_spc.gnb_first{border-right:1px solid #eee}
+.gnb_svc_more .svc_spc strong{height:20px;color:#2f3743;line-height:16px}
+.gnb_svc_more .svc_spc a:visited{color:#2f3743}
+.gnb_svc_more .svc_spc ul{padding:8px 0}
+.gnb_svc_more .svc_spc li{margin-bottom:0;padding-bottom:5px;color:#848689}
+.gnb_svc_more .svc_stroy{width:89px;margin-top:-5px;padding:12px 0 0;border-top:1px solid #eee}
+.gnb_svc_more .svc_btns{position:relative;height:33px;overflow:hidden;padding-top:5px;line-height:normal}
+.gnb_svc_more .svc_btnwrp{position:relative;*height:39px;background:url(https://ssl.pstatic.net/static/common/gnb/2014/bg_svclyr1_v2.png) repeat-y -641px 0;padding:0 2px 0 4px}
+.gnb_svc_more .svc_btnwrp button{display:inline-block;width:60px;height:25px;border:0;vertical-align:top}
+.gnb_svc_more .svc_btnwrp .gnb_save{background-position:0 -160px}
+.gnb_svc_more .svc_btnwrp .gnb_close{margin-left:1px;background-position:-65px -160px}
+.gnb_svc_more .svc_btnwrp .gnb_return{position:absolute;top:5px;left:15px;background-position:-130px -160px}
+.gnb_type2 .gnb_notice_li a.gnb_notice .gnb_icon{background-position:-155px -120px}
+.gnb_type2 .gnb_notice_li a.gnb_notice:hover .gnb_icon{background-position:-155px -140px}
+.gnb_type2 .gnb_service_li .gnb_service .gnb_icon{background-position:-200px -120px}
+.gnb_type2 .gnb_service_li .gnb_service:hover .gnb_icon{background-position:-200px -140px}
+.gnb_type2 .mail_li a.gnb_mail .gnb_icon{background-position:-175px -120px}
+.gnb_type2 .mail_li a.gnb_mail:hover .gnb_icon{background-position:-175px -140px}
+.gnb_dark .gnb_my_li .gnb_my .gnb_name, .gnb_dark .gnb_login_li .gnb_btn_login .gnb_txt{color:#fff}
+.gnb_dark .gnb_login_li .gnb_btn_login .gnb_bdr{border-color:#fff;opacity:0.1;filter:alpha(opacity=10)}
+.gnb_dark .gnb_login_li .gnb_btn_login .gnb_bg{background:#fff;opacity:0.15;filter:alpha(opacity=15)}
+.gnb_dark .gnb_notice_li a.gnb_notice .gnb_icon{background-position:-3px -1px}
+.gnb_dark .gnb_notice_li a.gnb_notice:hover .gnb_icon{background-position:-33px -1px}
+.gnb_dark .mail_li a.gnb_mail .gnb_icon{background-position:0px -29px}
+.gnb_dark .mail_li a.gnb_mail:hover .gnb_icon{background-position:-30px -29px}
+.gnb_dark .gnb_service_li .gnb_service .gnb_icon{background-position:-60px 0}
+.gnb_dark .gnb_service_li .gnb_service:hover .gnb_icon{background-position:-60px -30px}
+.gnb_dark_type2 .gnb_my_li .gnb_my .gnb_name, .gnb_dark_type2 .gnb_login_li .gnb_btn_login .gnb_txt{color:#fff}
+.gnb_dark_type2 .gnb_login_li .gnb_btn_login .gnb_bdr{border-color:#fff;opacity:0.1;filter:alpha(opacity=10)}
+.gnb_dark_type2 .gnb_login_li .gnb_btn_login .gnb_bg{background:#fff;opacity:0.15;filter:alpha(opacity=15)}
+.gnb_dark_type2 .gnb_notice_li a.gnb_notice .gnb_icon{background-position:-220px -120px}
+.gnb_dark_type2 .gnb_notice_li a.gnb_notice:hover .gnb_icon{background-position:-220px -140px}
+.gnb_dark_type2 .mail_li a.gnb_mail .gnb_icon{background-position:-235px -120px}
+.gnb_dark_type2 .mail_li a.gnb_mail:hover .gnb_icon{background-position:-235px -140px}
+.gnb_dark_type2 .gnb_service_li .gnb_service .gnb_icon{background-position:-260px -120px}
+.gnb_dark_type2 .gnb_service_li .gnb_service:hover .gnb_icon{background-position:-260px -140px}
+#gnb.gnb_one .gnb_my_li .gnb_my .gnb_name, #gnb.gnb_one_small .gnb_my_li .gnb_my .gnb_name, #gnb.gnb_one .gnb_login_li .gnb_btn_login .gnb_txt, #gnb.gnb_one_small .gnb_login_li .gnb_btn_login .gnb_txt{color:#fff}
+#gnb.gnb_one .gnb_login_li, #gnb.gnb_one_small .gnb_login_li {height: 28px;}
+#gnb.gnb_one .gnb_login_li .gnb_btn_login, #gnb.gnb_one_small .gnb_login_li .gnb_btn_login, #gnb.gnb_one .gnb_login_li .gnb_bg, #gnb.gnb_one_small .gnb_login_li .gnb_bg, #gnb.gnb_one .gnb_login_li .gnb_bdr, #gnb.gnb_one_small .gnb_login_li .gnb_bdr, #gnb.gnb_one .gnb_login_li .gnb_txt, #gnb.gnb_one_small .gnb_login_li .gnb_txt {width: 53px;height: 23px;}
+#gnb.gnb_one .gnb_login_li .gnb_btn_login .gnb_bdr, #gnb.gnb_one_small .gnb_login_li .gnb_btn_login .gnb_bdr{top: -1px;left: -1px;border-color: #000;opacity: 0.12;filter: alpha(opacity=12);}
+#gnb.gnb_one .gnb_login_li .gnb_btn_login .gnb_bg, #gnb.gnb_one_small .gnb_login_li .gnb_btn_login .gnb_bg{background:#fff;opacity:0.05;filter:alpha(opacity=5)}
+#gnb.gnb_one .gnb_login_li .gnb_btn_login .gnb_txt, #gnb.gnb_one_small .gnb_login_li .gnb_btn_login .gnb_txt {top: -1px;width: 53px;height: 23px;line-height: 28px;font-size: 11px;font-family: '돋움',Dotum !important;}
+#gnb.gnb_one .gnb_login_li, #gnb.gnb_one_small .gnb_login_li, #gnb.gnb_one .gnb_my_li, #gnb.gnb_one_small .gnb_my_li, #gnb.gnb_one .gnb_notice_li, #gnb.gnb_one_small .gnb_notice_li, #gnb.gnb_one .mail_li, #gnb.gnb_one_small .mail_li, #gnb.gnb_one .gnb_service_li, #gnb.gnb_one_small .gnb_service_li{margin-right: 0;margin-left: 0; background: url(https://ssl.pstatic.net/static/common/gnb/bg_one_line.png) repeat-y right 0;}
+#gnb.gnb_one .gnb_login_li a, #gnb.gnb_one_small .gnb_login_li a, #gnb.gnb_one .gnb_my_li a, #gnb.gnb_one_small .gnb_my_li a, #gnb.gnb_one .gnb_notice_li a, #gnb.gnb_one_small .gnb_notice_li a, #gnb.gnb_one .mail_li a, #gnb.gnb_one_small .mail_li a, #gnb.gnb_one .gnb_service_li a, #gnb.gnb_one_small .gnb_service_li a {margin-right: 1px;}
+#gnb.gnb_one .gnb_login_li.hover .gnb_service, #gnb.gnb_one_small .gnb_login_li.hover .gnb_service, #gnb.gnb_one .gnb_login_li.hover .gnb_notice, #gnb.gnb_one_small .gnb_login_li.hover .gnb_notice, #gnb.gnb_one .gnb_login_li.hover .gnb_mail, #gnb.gnb_one_small .gnb_login_li.hover .gnb_mail, #gnb.gnb_one .gnb_login_li.hover .gnb_service, #gnb.gnb_one_small .gnb_login_li.hover .gnb_service, #gnb.gnb_one .gnb_my_li.hover .gnb_service, #gnb.gnb_one_small .gnb_my_li.hover .gnb_service, #gnb.gnb_one .gnb_my_li.hover .gnb_notice, #gnb.gnb_one_small .gnb_my_li.hover .gnb_notice, #gnb.gnb_one .gnb_my_li.hover .gnb_mail, #gnb.gnb_one_small .gnb_my_li.hover .gnb_mail, #gnb.gnb_one .gnb_my_li.hover .gnb_service, #gnb.gnb_one_small .gnb_my_li.hover .gnb_service, #gnb.gnb_one .gnb_notice_li.hover .gnb_service, #gnb.gnb_one_small .gnb_notice_li.hover .gnb_service, #gnb.gnb_one .gnb_notice_li.hover .gnb_notice, #gnb.gnb_one_small .gnb_notice_li.hover .gnb_notice, #gnb.gnb_one .gnb_notice_li.hover .gnb_mail, #gnb.gnb_one_small .gnb_notice_li.hover .gnb_mail, #gnb.gnb_one .gnb_notice_li.hover .gnb_service, #gnb.gnb_one_small .gnb_notice_li.hover .gnb_service, #gnb.gnb_one .mail_li.hover .gnb_service, #gnb.gnb_one_small .mail_li.hover .gnb_service, #gnb.gnb_one .mail_li.hover .gnb_notice, #gnb.gnb_one_small .mail_li.hover .gnb_notice, #gnb.gnb_one .mail_li.hover .gnb_mail, #gnb.gnb_one_small .mail_li.hover .gnb_mail, #gnb.gnb_one .mail_li.hover .gnb_service, #gnb.gnb_one_small .mail_li.hover .gnb_service, #gnb.gnb_one .gnb_service_li.hover .gnb_service, #gnb.gnb_one_small .gnb_service_li.hover .gnb_service, #gnb.gnb_one .gnb_service_li.hover .gnb_notice, #gnb.gnb_one_small .gnb_service_li.hover .gnb_notice, #gnb.gnb_one .gnb_service_li.hover .gnb_mail, #gnb.gnb_one_small .gnb_service_li.hover .gnb_mail, #gnb.gnb_one .gnb_service_li.hover .gnb_service, #gnb.gnb_one_small .gnb_service_li.hover .gnb_service {background: url(https://ssl.pstatic.net/static/common/gnb/bg_one_hover.png) repeat 0 0;}
+#gnb.gnb_one .gnb_my_li .gnb_my .gnb_name, #gnb.gnb_one_small .gnb_my_li .gnb_my .gnb_name {margin: 0 0 0 4px;font-family: '돋움',Dotum !important;}
+#gnb.gnb_one .gnb_my_li .gnb_my .gnb_name, #gnb.gnb_one_small .gnb_my_li .gnb_my .gnb_name{margin:0 0 0 4px}
+#gnb.gnb_one .gnb_notice_li a.gnb_notice, #gnb.gnb_one_small .gnb_notice_li a.gnb_notice{width:17px;height:19px}
+#gnb.gnb_one .gnb_notice_li a.gnb_notice .gnb_icon, #gnb.gnb_one_small .gnb_notice_li a.gnb_notice .gnb_icon{width:17px;height:19px;background-position:-284px -119px}
+#gnb.gnb_one .gnb_notice_li a.gnb_notice:hover .gnb_icon, #gnb.gnb_one_small .gnb_notice_li a.gnb_notice:hover .gnb_icon{background-position:-284px -119px}
+#gnb.gnb_one .mail_li a.gnb_mail, #gnb.gnb_one_small .mail_li a.gnb_mail{width:21px;height:17px}
+#gnb.gnb_one .mail_li a.gnb_mail .gnb_icon, #gnb.gnb_one_small .mail_li a.gnb_mail .gnb_icon{width:21px;height:17px;background-position:-302px -120px}
+#gnb.gnb_one .mail_li a.gnb_mail:hover .gnb_icon, #gnb.gnb_one_small .mail_li a.gnb_mail:hover .gnb_icon{background-position:-302px -120px}
+#gnb.gnb_one .gnb_service_li .gnb_service, #gnb.gnb_one_small .gnb_service_li .gnb_service{width:17px;height:17px}
+#gnb.gnb_one .gnb_service_li .gnb_service .gnb_icon, #gnb.gnb_one_small .gnb_service_li .gnb_service .gnb_icon{width:17px;height:17px;background-position:-324px -120px}
+#gnb.gnb_one .gnb_service_li .gnb_service:hover .gnb_icon, #gnb.gnb_one_small .gnb_service_li .gnb_service:hover .gnb_icon{background-position:-324px -120px}
+#gnb.gnb_one .gnb_my_lyr, #gnb.gnb_one_small .gnb_my_lyr, #gnb.gnb_one .gnb_notice_lyr, #gnb.gnb_one_small .gnb_notice_lyr, #gnb.gnb_one .gnb_service_lyr, #gnb.gnb_one_small .gnb_service_lyr {right: 7px;}
+#gnb.gnb_one .gnb_ico_num, #gnb.gnb_one_small .gnb_ico_num{width:34px;top:10px;right:3px;left:auto;vertical-align:top}
+#gnb.gnb_one .gnb_ico_num .gnb_ico_new, #gnb.gnb_one_small .gnb_ico_num .gnb_ico_new{vertical-align:top;height:13px;background-position:-332px -60px;}
+#gnb.gnb_one .gnb_ico_num .gnb_count, #gnb.gnb_one_small .gnb_ico_num .gnb_count {height: 13px;padding: 0 6px 0 2px;background-position: 100% -60px;font-size: 10px;font-weight: normal;}
+#gnb.gnb_one .gnb_ico_num .plus, #gnb.gnb_one_small .gnb_ico_num .plus{margin:1px 0 0 2px}
+#gnb.gnb_one .ico_arrow{top:48px}
+#gnb.gnb_one .gnb_my_lyr, #gnb.gnb_one .gnb_notice_lyr{top:47px}
+#gnb.gnb_one .gnb_service_lyr{top:48px;}
+#gnb.gnb_one .gnb_login_li{padding:16px 21px 10px 1px}
+#gnb.gnb_one .gnb_my_li{padding:12px 20px 12px 2px}
+#gnb.gnb_one .gnb_my_li .ico_arrow{top:34px}
+#gnb.gnb_one .gnb_notice_li a.gnb_notice{padding:18px 19px 17px 19px}
+#gnb.gnb_one .mail_li a.gnb_mail{padding:19px 17px 18px 17px}
+#gnb.gnb_one .gnb_service_li .gnb_service{padding:19px 19px 18px 19px}
+#gnb.gnb_one_small .ico_arrow{top:33px}
+#gnb.gnb_one_small .gnb_my_lyr, #gnb.gnb_one_small .gnb_notice_lyr{top:32px}
+#gnb.gnb_one_small .gnb_service_lyr{top:33px}
+#gnb.gnb_one_small .gnb_login_li{padding:7px 12px 4px 2px}
+#gnb.gnb_one_small .gnb_my_li{padding:5px 20px 4px 2px}
+#gnb.gnb_one_small .gnb_my_li .ico_arrow{top:27px}
+#gnb.gnb_one_small .gnb_notice_li a.gnb_notice{padding:10px 11px 10px 12px}
+#gnb.gnb_one_small .mail_li a.gnb_mail{padding:11px 10px 11px 9px}
+#gnb.gnb_one_small .gnb_service_li .gnb_service{padding:11px 12px 11px 11px}
+#gnb.gnb_one_small .gnb_ico_num{top:5px;right:6px;width:24px}
+#gnb.gnb_one_flat .gnb_login_li,
+#gnb.gnb_one_flat .gnb_my_li,
+#gnb.gnb_one_flat .gnb_notice_li,
+#gnb.gnb_one_flat .mail_li,
+#gnb.gnb_one_flat .gnb_service_li {border-color: #e0e0e0;}
+#gnb.gnb_one_flat .gnb_notice_li.hover,
+#gnb.gnb_one_flat .mail_li.hover,
+#gnb.gnb_one_flat .gnb_service_li.hover {background-color: rgba(0, 0, 0, 0.04);}
+#gnb.gnb_one_flat .gnb_service_li .gnb_service .gnb_icon,
+#gnb.gnb_one_flat .gnb_service_li .gnb_service:hover .gnb_icon {background-image: url(https://ssl.pstatic.net/static/common/gnb/one/sp_gnb_4b16e6.png);background-position: -84px -24px;background-repeat: no-repeat; width: 16px;height: 16px;vertical-align: top; margin: 0 1px;}
+#gnb.gnb_one_flat .mail_li a.gnb_mail .gnb_icon,
+#gnb.gnb_one_flat .mail_li a.gnb_mail:hover .gnb_icon {background-image: url(https://ssl.pstatic.net/static/common/gnb/one/sp_gnb_4b16e6.png);background-position: 0px -42px;background-repeat: no-repeat;width: 20px;height: 16px;vertical-align: top;margin: 0 1px;}
+#gnb.gnb_one_flat .gnb_notice_li a.gnb_notice .gnb_icon,
+#gnb.gnb_one_flat .gnb_notice_li a.gnb_notice:hover .gnb_icon {background-image: url(https://ssl.pstatic.net/static/common/gnb/one/sp_gnb_4b16e6.png);background-position: -84px 0px;background-repeat: no-repeat;width: 16px;height: 18px;vertical-align: top;margin: 0 1px;}
+#gnb.gnb_one_flat .gnb_my_li .gnb_my .gnb_name,
+#gnb.gnb_one_flat .gnb_login_li .gnb_btn_login .gnb_txt {color: #777;}</style>
+<script src="https://ssl.pstatic.net/static.gn/js/clickcrD.js" id="gnb_clickcrD" charset="utf-8"></script>
+</head>
+<body id="gnbLayerClose">
+<a href="#content" class="skip_to_content" tabindex="2">본문 바로가기</a>
+<div id="wrap" class="dichome">
+	<div id="header" class="main">
+	
+<script type="text/javascript">
+<!--
+	var endicUrl = "http://endic.naver.com", eedicUrl = "http://eedic.naver.com", krdicUrl = "http://krdic.naver.com", hanjaUrl = "http://hanja.naver.com", jpdicUrl = "http://jpdic.naver.com",
+	cndicUrl = "http://cndic.naver.com", frdicUrl = "http://frdic.naver.com", spdicUrl = "http://spdic.naver.com", encyUrl = "http://terms.naver.com", medicUrl = "http://medic.naver.com",
+	artdicUrl = "http://terms.naver.com/list.nhn?cid=44623&categoryId=44623&categoryType=dictionary", wordbookUrl = "http://wordbook.naver.com", dedicUrl = "http://dedic.naver.com", vndicUrl = "http://vndic.naver.com",rudicUrl = "http://rudic.naver.com",mndicUrl = "http://mndic.naver.com",iddicUrl = "http://iddic.naver.com"
+	phrasebookUrl = "http://phrasebook.naver.com", navercastUrl = "http://navercast.naver.com", knowledgeUrl = "http://terms.naver.com", knowdicUrl = "http://dic.search.naver.com",
+	knowDicSearchUrl = "http://terms.naver.com/search.nhn?query=", knowledgeSearchUrl = "http://terms.naver.com/search.nhn?query=",
+	knowEncySearchUrl = "http://terms.naver.com/search.nhn?subject=Doopedia&query=", knowCastSearchUrl = "http://navercast.naver.com/search.nhn?query=",
+	knowElementarySearchUrl = "http://terms.naver.com/search.nhn?sm=&subject=1400&query=", minbaekSearchUrl = "http://terms.naver.com/search.nhn?subject=KoreanCulture&query=",
+	knowArtSearchUrl = "http://terms.naver.com/search.nhn?sm=&subject=1600&query=", animalAndplantSearchUrl = "http://terms.naver.com/search.nhn?searchType=text&dicType=&subject=900&query=",visualdicSearchUrl = "http://terms.naver.com/search.nhn?searchType=text&dicType=30&subject=&query=",
+	studentEncySearchUrl = "http://terms.naver.com/search.nhn?searchType=text&dicType=29&subject=&query=",foodEncySearchUrl="http://terms.naver.com/search.nhn?searchType=text&dicType=15&subject=&query=",
+	healthEncySearchUrl = "http://terms.naver.com/search.nhn?searchType=text&dicType=13&subject=&query=",videoEncySearchUrl="http://terms.naver.com/search.nhn?searchType=text&dicType=14&subject=&query=",
+	UNESCOSearchUrl = "http://terms.naver.com/search.nhn?searchType=text&dicType=33&subject=&query=",cultureEncySearchUrl="http://terms.naver.com/search.nhn?searchType=text&dicType=9&subject=&query=",
+	mediaEncySearchUrl="http://terms.naver.com/search.nhn?searchType=text&dicType=17&subject=&query=",ologyEncySearchUrl="http://terms.naver.com/search.nhn?searchType=text&dicType=18&subject=&query=",
+	koreanFolkEncySearchUrl="http://terms.naver.com/search.nhn?searchType=text&dicType=19&subject=&query=",shareSearchUrl="http://terms.naver.com/search.nhn?searchType=text&dicType=10&subject=&query=",
+	historySearchUrl="http://terms.naver.com/search.nhn?searchType=text&dicType=32&subject=&query=",KOTRASearchUrl="http://terms.naver.com/search.nhn?searchType=text&dicType=21&subject=&query=",
+	trdicUrl="http://trdic.naver.com",ptdicUrl="http://ptdic.naver.com", khdicUrl="http://khdic.naver.com", uadicUrl="http://uadic.naver.com", uzdicUrl="http://uzdic.naver.com", aldicUrl="http://aldic.naver.com", gedicUrl="http://gedic.naver.com", ladicUrl="http://ladic.naver.com",
+	csdicUrl="http://csdic.naver.com",swdicUrl="http://swdic.naver.com",hidicUrl="http://hidic.naver.com",fadicUrl="http://fadic.naver.com",thdicUrl="http://thdic.naver.com",ardicUrl="http://ardic.naver.com",nedicUrl="http://nedic.naver.com",
+	itdicUrl="http://itdic.naver.com",rodicUrl="http://rodic.naver.com",nldicUrl="http://nldic.naver.com",svdicUrl="http://svdic.naver.com",hudicUrl="http://hudic.naver.com",pldicUrl="http://pldic.naver.com",
+	enkrtransUrl="http://translate.naver.com/#/en/ko",jpkrtransUrl="http://translate.naver.com/#/ja/ko",cnkrtransUrl="http://translate.naver.com/#/zh-CN/ko",cntwkrtransUrl="http://translate.naver.com/#/zh-TW/ko",frkrtransUrl="http://translate.naver.com/#/fr/ko",spkrtransUrl="http://translate.naver.com/#/es/ko",
+	jpentransUrl="http://translate.naver.com/#/ja/en",spentransUrl="http://translate.naver.com/#/es/en",ptentransUrl="http://translate.naver.com/#/pt/en",thentransUrl="http://translate.naver.com/#/th/en",identransUrl="http://translate.naver.com/#/id/en",
+	cnentransUrl="http://translate.naver.com/#/zh-CN/en",deentransUrl="http://translate.naver.com/#/de/en",ruentransUrl="http://translate.naver.com/#/ru/en",vnentransUrl="http://translate.naver.com/#/vi/en",hientransUrl="http://translate.naver.com/#/hi/en",siteTransUrl="http://sitetrans.naver.net";
+	//-->
+</script>
+<script type="text/javascript">
+	document.domain = "autosearch-ghkdgh.c9users.io";
+	
+	function addOnloadEventListener(fnc) {
+		if (typeof window.addEventListener != "undefined") {
+			window.addEventListener("load", fnc, false);
+		} else if (typeof window.attachEvent != "undefined") {
+			window.attachEvent("onload", fnc);
+		} else {
+			if (window.onload != null) {
+				var oldOnload = window.onload;
+				window.onload = function (e) {
+					oldOnload(e);
+					fnc(e);
+				};
+			} else {
+				window.onload = fnc;
+			}
+		}
+	}
+	
+</script>
+<!-- header -->
+
+
+<!-- 공통 GNB -->
+<div class="Ngnb_wrap">
+	<div class="Ngnb">
+		<div class="Ngnb_inner">
+			<a href="http://www.naver.com" class="Nlogo_link" onclick="clickcr(this, 'DNB.naver','','',event);"><span class="Nsp_gnb">NAVER</span></a>
+			<!--[D] 영문버전일때 lang="en" 추가 -->
+			<div class="Ngnb_service">
+				<h1 class="Nservice_item"><a href="http://dic.naver.com" class="Nhome Ndic" onclick="clickcr(this, 'DNB.dic','','',event);"><span class="Nsp_gnb">사전</span></a></h1>
+				<span class="Nservice_subitem"><a href="http://translate.naver.com" class="Ntranslate" onclick="clickcr(this, 'DNB.translation','','',event);"><span class="Nsp_gnb">번역기</span></a></span>
+				<span class="Nservice_subitem"><a href="http://usertranslation.naver.com" class="Nusertranslation" onclick="clickcr(this, 'DNB.usetrans','','',event);"><span class="Nsp_gnb">참여번역</span></a></span>
+				<span class="Nservice_subitem"><a href="http://terms.naver.com" class="Nknowledge" onclick="clickcr(this, 'DNB.terms','','',event);"><span class="Nsp_gnb">지식백과</span></a></span>
+			</div>
+			<div class="Ngnb_common">
+                <div id="gnb" class="gnb_one"><strong class="blind">사용자 링크</strong><ul class="gnb_lst" id="gnb_lst" style="display: block;"><li class="gnb_login_li" id="gnb_login_layer" style="display: none;"><a class="gnb_btn_login" href="https://nid.naver.com/nidlogin.login?url=http%3A%2F%2Fdic.naver.com%2F" id="gnb_login_button"><span class="gnb_bg"></span><span class="gnb_bdr"></span><span class="gnb_txt">로그인</span></a></li><li class="gnb_my_li" id="gnb_my_layer" style="display: inline-block;"><div class="gnb_my_namebox" id="gnb_my_namebox" style="background-image: url(&quot;https://ssl.pstatic.net/static/common/gnb/2014/ico_arrow_wh.gif&quot;);"><a href="javascript:;" class="gnb_my" onclick="gnbUserLayer.clickToggle(); return false;"><img id="gnb_profile_img" src="https://ssl.pstatic.net/static/common/myarea/myInfo.gif" width="26" height="26" alt="내 프로필 이미지" style="display: inline-block;"> <span class="gnb_name" id="gnb_name1">ghkdg..</span><em class="blind">내정보 보기</em><span class="ico_arrow"></span></a><a href="#" class="gnb_emp" id="gnb_emp" style="display: none;">(임직원혜택)</a></div><div class="gnb_my_lyr" id="gnb_my_lyr"><div class="gnb_my_content"><div class="gnb_img_area"><span class="gnb_mask"></span><img src="https://ssl.pstatic.net/static/common/myarea/myInfo.gif" width="80" height="80" alt=""><a href="https://nid.naver.com/user2/api/naverProfile.nhn?m=checkIdType" class="gnb_change"><span class="blind">프로필 사진 변경</span></a></div><div class="gnb_txt_area"><p class="gnb_account"><span class="gnb_name" id="gnb_name2"><a class="gnb_nick" href="https://nid.naver.com/user2/api/naverProfile.nhn?m=checkIdType">ghkdg..</a>님</span><a class="gnb_btn_login" href="https://nid.naver.com/nidlogin.logout?returl=http%3A%2F%2Fdic.naver.com%2F" id="gnb_logout_button"><span class="gnb_bg"></span><span class="gnb_bdr"></span><span class="gnb_txt">로그아웃</span></a></p><a href="http://mail.naver.com" class="gnb_mail_address">ghkdgh2365@naver.com</a><ul class="gnb_edit_lst"><li class="gnb_info"><a href="https://nid.naver.com/user2/help/myInfo.nhn?menu=home">내정보</a></li><li class="gnb_secure" id="gnb_secure_lnk"><a href="https://nid.naver.com/user2/help/myInfo.nhn?m=viewSecurity&amp;menu=security">보안설정</a></li></ul><p class="gnb_pay_check" id="gnb_pay_check"><em>N Pay</em><a href="http://pay.naver.com" id="gnb_pay_point"><span>내 페이포인트</span></a></p></div></div><div class="gnb_my_community"><a href="http://blog.naver.com/MyBlog.nhn" class="gnb_blog">내 블로그</a><a href="http://section.cafe.naver.com" class="gnb_cafe">가입한 카페</a><a href="http://pay.naver.com" class="gnb_pay"><span>N Pay</span></a></div><a href="#" class="gnb_my_interface" style="display:none"><span class="blind">환경설정</span></a></div><iframe id="gnb_my_lyr_iframe" title="빈 프레임" class="gnb_pad_lyr" name="padding" width="0" height="0" scrolling="no" frameborder="0" style="top: 55px; right: 10px; width: 320px; height: 174px; display: none; opacity: 0;"></iframe></li><li class="gnb_notice_li" id="gnb_notice_layer" style="display: inline-block;"><a href="javascript:;" class="gnb_notice" onclick="gnbNaverMeLayer.clickToggle(); return false;"><span class="blind">알림</span><span class="gnb_icon"></span><em class="gnb_ico_num" id="gnb_me_menu" style="display:none"><span class="gnb_ico_new"><span class="gnb_count" id="gnb_me_count" style="display: inline-block;"></span></span></em><span class="ico_arrow"></span></a><div class="gnb_notice_lyr" id="gnb_notice_lyr"><div class="svc_noti svc_panel"><div class="svc_scroll"><div class="svc_head"><strong class="gnb_tit">전체 알림</strong><div class="task_right"><button onclick="gnbNaverMeLayer.deleteReadList(this, event);" id="gnb_btn_read_noti_del">읽은 알림 삭제</button><button onclick="gnbNaverMeLayer.showDeleteAlert();" id="gnb_btn_all_noti_del">모두 삭제</button></div></div><div class="svc_body" id="gnb_naverme_layer"></div></div><div class="gnb_ly_alert" id="gnb_ly_alert" style="display: none;"><p class="gnb_msg"><strong>알림을 모두 삭제하시겠습니까?</strong></p><div class="gnb_btns"><button id="ly_alert_confirm" onclick="gnbNaverMeLayer.deleteAllList(this, event);">확인</button><button onclick="gnbNaverMeLayer.hideDeleteAlert();">취소</button></div><button class="gnb_btn_close" onclick="gnbNaverMeLayer.hideDeleteAlert();"><i>레이어 닫기</i></button></div><a href="http://me.naver.com/box/noti.nhn" class="gnb_notice_all">내 알림 전체보기</a></div></div><iframe id="gnb_notice_lyr_iframe" title="빈 프레임" class="gnb_pad_lyr" name="padding" width="0" height="0" scrolling="no" frameborder="0" style="top: 55px; right: 10px; width: 299px; height: 332px; display: none; opacity: 0;"></iframe></li><li class="mail_li" id="gnb_mail_layer" style="display: inline-block;"><a href="http://mail.naver.com" class="gnb_mail"><span class="blind">메일</span><span class="gnb_icon"></span><em class="gnb_ico_num" id="gnb_mail_menu" style="display: block;"><span class="gnb_ico_new"><span class="gnb_count" id="gnb_mail_count" style="display: inline-block;">99<span class="plus">+</span></span></span></em></a></li><li class="gnb_service_li" id="gnb_service_layer" style="display: inline-block;"><a href="javascript:;" class="gnb_service" onclick="gnbMoreLayer.clickToggle(); return false;"><span class="blind">서비스 더보기</span><span class="gnb_icon"></span><span class="ico_arrow"></span></a><div class="gnb_service_lyr" id="gnb_service_lyr"><div class="gnb_favorite_search" id="gnb_favorite_search"><div class="gnb_favorite_area"><div class="gnb_favorite_lstwrp"><div class="gnb_first_visit" style="display:none"><span class="blind">나만의 즐겨찾기를 추가해 보세요!</span><a href="#" class="gnb_close"><span class="blind">닫기</span></a></div><strong class="blind">즐겨찾는 서비스</strong><ul class="gnb_favorite_lst" id="gnb_favorite_lst"><li class="gnb_add"><a href="#"><span class="ic_add"></span>추가</a></li><li class="gnb_add"><a href="#"><span class="ic_add"></span>추가</a></li><li class="gnb_add"><a href="#"><span class="ic_add"></span>추가</a></li><li class="gnb_add"><a href="#"><span class="ic_add"></span>추가</a></li></ul><a href="#" class="gnb_my_interface" onclick="gnbMoreLayer.clickToggleWhole(); return false;"><span class="blind">즐겨찾기 설정</span></a></div></div><div class="gnb_search_area"><div class="gnb_search_box" onmouseover="gnb_search.mouseOver(this);" onmouseout="gnb_search.mouseOut(this);"><input id="gnb_svc_search_input" type="text" title="서비스 검색" value="더 많은 서비스를 간편하게 시작하세요!" onfocus="gnb_search.clearInput(this);" onblur="gnb_search.resetInput(this);" onkeydown="gnb_search.keyDown(event);" onkeyup="gnb_search.keyUp(event);"><a href="#" class="gnb_del_txt" id="gnb_del_txt" style="display:none"><span class="blind">삭제</span></a><div class="gnb_pop_input" id="gnb_pop_input" tabindex="0" onfocus="gnb_search.searchPopOnMouse = true; return false;" onfocusout="gnb_search.searchPopOnMouse = false; return false;" onmouseover="gnb_search.searchPopOnMouse = true; return false;" onmouseout="gnb_search.searchPopOnMouse = false; return false;" style="display:none"><ul class="gnb_pop_lst"></ul></div></div><div class="gnb_search_lstwrp"><ul class="gnb_search_lst gnb_first"><li class="gnb_first"><a href="http://cafe.naver.com/">카페</a></li><li><a href="http://news.naver.com/">뉴스</a></li><li><a href="http://map.naver.com/">지도</a></li><li><a href="http://sports.news.naver.com/">스포츠</a></li><li><a href="http://game.naver.com/">게임</a></li></ul><ul class="gnb_search_lst"><li class="gnb_first"><a href="http://section.blog.naver.com/">블로그</a></li><li><a href="http://post.naver.com/main.nhn">포스트</a></li><li><a href="http://dic.naver.com/">사전</a></li><li><a href="http://kin.naver.com/">지식iN</a></li><li><a href="http://weather.naver.com/">날씨</a></li></ul><ul class="gnb_search_lst"><li class="gnb_first"><a href="http://mail.naver.com/">메일</a></li><li><a href="http://stock.naver.com/">증권</a></li><li><a href="http://land.naver.com/">부동산</a></li><li><a href="http://music.naver.com/">뮤직</a></li><li><a href="http://book.naver.com">책</a></li></ul><ul class="gnb_search_lst"><li class="gnb_first"><a href="http://shopping.naver.com/">쇼핑</a></li><li><a href="http://comic.naver.com/">웹툰</a></li><li><a href="http://movie.naver.com/">영화</a></li><li><a href="http://cloud.naver.com/">클라우드</a></li><li><a href="http://auto.naver.com/">자동차</a></li></ul></div></div><div class="gnb_banner"><a href="http://campaign.naver.com/pointevent/" class="gnb_service_event"><img id="gnb_promo" alt="네이버페이 | 11월 이벤트" width="265" height="47" src="https://ssl.pstatic.net/static/common/gnb/banner/promo_npay_1711.png"></a></div><div class="gnb_linkwrp"><a href="http://www.naver.com/more.html" class="gnb_service_all" id="gnb_service_all">전체 서비스 보기</a></div></div><div class="gnb_svc_more" id="gnb_svc_more" style="display: none;"><strong class="blind">네이버 주요 서비스</strong><div class="gnb_bg_top"></div><div class="gnb_svc_hd"><strong class="gnb_svc_tit">바로가기 설정</strong><span class="link"><a href="http://www.naver.com/more.html">전체 서비스 보기</a></span></div><div class="gnb_svc_lstwrp"><div class="gnb_svc_lst1"><ul class="gnb_first"><li><input type="checkbox" id="nsvc_game" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_game">게임</label></li><li><input type="checkbox" id="nsvc_weather" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_weather">날씨</label></li><li><input type="checkbox" id="nsvc_shopping" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_shopping">네이버쇼핑</label></li><li><input type="checkbox" id="nsvc_navercast" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_navercast">네이버캐스트</label></li><li><input type="checkbox" id="nsvc_cloud" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_cloud">네이버클라우드</label></li><li class="gnb_event"><input type="checkbox" id="nsvc_naverpay" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_naverpay">네이버페이</label><em class="ic_gnb_new">New</em></li><li><input type="checkbox" id="nsvc_news" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_news">뉴스</label></li><li><input type="checkbox" id="nsvc_comic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_comic">만화/웹툰</label></li><li><input type="checkbox" id="nsvc_memo" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_memo">메모</label></li><li><input type="checkbox" id="nsvc_mail" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_mail">메일</label></li><li><input type="checkbox" id="nsvc_music" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_music">뮤직</label></li><li><input type="checkbox" id="nsvc_land" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_land">부동산</label></li><li><input type="checkbox" id="nsvc_bookmark" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_bookmark">북마크</label></li></ul><ul class=""><li><input type="checkbox" id="nsvc_blog" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_blog">블로그</label></li><li><input type="checkbox" id="nsvc_dic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_dic">사전</label></li><li><input type="checkbox" id="nsvc_software" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_software">소프트웨어</label></li><li><input type="checkbox" id="nsvc_sports" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_sports">스포츠</label></li><li><input type="checkbox" id="nsvc_ya9" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_ya9">야구9단</label></li><li><input type="checkbox" id="nsvc_movie" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_movie">영화</label></li><li><input type="checkbox" id="nsvc_office" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_office">오피스</label></li><li><input type="checkbox" id="nsvc_novel" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_novel">웹소설</label></li><li><input type="checkbox" id="nsvc_auto" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_auto">자동차</label></li><li><input type="checkbox" id="nsvc_contact" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_contact">주소록</label></li><li><input type="checkbox" id="nsvc_finance" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_finance">증권(금융)</label></li><li><input type="checkbox" id="nsvc_map" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_map">지도</label></li><li><input type="checkbox" id="nsvc_kin" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_kin">지식iN</label></li></ul><ul class=""><li><input type="checkbox" id="nsvc_terms" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_terms">지식백과</label></li><li><input type="checkbox" id="nsvc_book" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_book">책</label></li><li><input type="checkbox" id="nsvc_cafe" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_cafe">카페</label></li><li><input type="checkbox" id="nsvc_calendar" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_calendar">캘린더</label></li><li><input type="checkbox" id="nsvc_photo" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_photo">포토갤러리</label></li><li><input type="checkbox" id="nsvc_nstore" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_nstore">N스토어</label></li><li><input type="checkbox" id="nsvc_navertv" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_navertv">네이버TV</label></li></ul></div><div class="svc_lst2"><div class="svc_spc gnb_first"><strong><a href="http://dic.naver.com/">어학사전</a></strong><ul class=""><li><input type="checkbox" id="nsvc_krdic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_krdic">국어사전</label></li><li><input type="checkbox" id="nsvc_endic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_endic">영어/영영사전</label></li><li><input type="checkbox" id="nsvc_hanja" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_hanja">한자사전</label></li><li><input type="checkbox" id="nsvc_jpdic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_jpdic">일어사전</label></li><li><input type="checkbox" id="nsvc_cndic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_cndic">중국어사전</label></li><li><input type="checkbox" id="nsvc_frdic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_frdic">프랑스어사전</label></li><li><input type="checkbox" id="nsvc_dedic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_dedic">독일어사전</label></li><li><input type="checkbox" id="nsvc_rudic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_rudic">러시아어사전</label></li><li><input type="checkbox" id="nsvc_vndic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_vndic">베트남어사전</label></li><li><input type="checkbox" id="nsvc_spdic" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_spdic">스페인어사전</label></li><li><input type="checkbox" id="nsvc_translate" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_translate">번역기</label></li></ul></div><div class="svc_spc"><strong>인기/신규서비스</strong><ul class=""><li><input type="checkbox" id="nsvc_grafolio" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_grafolio">그라폴리오</label></li><li><input type="checkbox" id="nsvc_post" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_post">포스트</label></li><li><input type="checkbox" id="nsvc_luncherapp" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_luncherapp">도돌런처</label></li><li><input type="checkbox" id="nsvc_band" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_band">밴드</label></li><li><input type="checkbox" id="nsvc_line" name="selmenu" class="gnb_input_check" value=""> <label for="nsvc_line">라인</label></li></ul></div></div></div><div class="svc_btnwrp"><div class="svc_btns"><button class="gnb_save" onclick="if(gnbFavorite.addService()){gnbMoreLayer.clickToggleWhole()} return false;"><strong class="blind">확인</strong></button><button class="gnb_close" onclick="gnbFavorite.cancel(); return false;"><span class="blind">취소</span></button><button class="gnb_return" onclick="gnbFavorite.resetService(); return false;"><span class="blind">초기 설정으로 변경</span></button></div></div><div class="gnb_bg_btm"></div></div></div><iframe id="gnb_service_lyr_iframe" title="빈 프레임" class="gnb_pad_lyr" name="padding" width="0" height="0" scrolling="no" frameborder="0" style="display: none; top: 55px; right: 311px; width: 585px; height: 385px; opacity: 0;"></iframe><iframe id="gnb_svc_more_iframe" title="빈 프레임" class="gnb_pad_lyr" name="padding" width="0" height="0" scrolling="no" frameborder="0" style="display: none; top: 55px; right: 10px; width: 295px; height: 385px; opacity: 0;"></iframe></li></ul></div>
+                <!-- //GNB -->
+            </div>
+		</div>
+	</div>
+	<div class="Nlnb" id="Nlnb">
+		<div class="Nlnb_inner">
+			<ul class="Nnav">
+			<!--[D] 선택메뉴에 Nnav_item_active 추가-->
+			<li class="Nnav_cell"><a href="http://dic.naver.com" id="_id_dichome_href" onclick="clickcr(this, 'DNB.dichome','','',event);" class="Nnav_item Nnav_item_active">사전홈</a><span id="_id_dichome_new" style="display:none" class="Nsp_gnb Nnew">신규추가</span><span id="_id_dichome_up" style="display:none" class="Nsp_gnb Nupdate">업데이트</span></li>
+			<li class="Nnav_cell"><a href="http://endic.naver.com" id="_id_endic_href" onclick="clickcr(this, 'DNB.endic','','',event);" class="Nnav_item">영어</a><span id="_id_endic_new" style="display:none" class="Nsp_gnb Nnew">신규추가</span><span id="_id_endic_up" style="display:none" class="Nsp_gnb Nupdate">업데이트</span></li>
+			<li class="Nnav_cell"><a href="http://krdic.naver.com" id="_id_krdic_href" onclick="clickcr(this, 'DNB.krdic','','',event);" class="Nnav_item">국어</a><span id="_id_krdic_new" style="display:none" class="Nsp_gnb Nnew">신규추가</span><span id="_id_krdic_up" style="display:none" class="Nsp_gnb Nupdate">업데이트</span></li>
+			<li class="Nnav_cell"><a href="http://hanja.naver.com" id="_id_hanja_href" onclick="clickcr(this, 'DNB.hanja','','',event);" class="Nnav_item">한자</a><span id="_id_hanja_new" style="display:none" class="Nsp_gnb Nnew">신규추가</span><span id="_id_hanja_up" style="display:none" class="Nsp_gnb Nupdate">업데이트</span></li>
+			<li class="Nnav_cell"><a href="http://jpdic.naver.com" id="_id_jpdic_href" onclick="clickcr(this, 'DNB.jpdic','','',event);" class="Nnav_item">일본어</a><span id="_id_jpdic_new" style="display:none" class="Nsp_gnb Nnew">신규추가</span><span id="_id_jpdic_up" style="display:none" class="Nsp_gnb Nupdate">업데이트</span></li>
+			<li class="Nnav_cell"><a href="http://cndic.naver.com" id="_id_cndic_href" onclick="clickcr(this, 'DNB.cndic','','',event);" class="Nnav_item">중국어</a><span id="_id_cndic_new" style="display:none" class="Nsp_gnb Nnew">신규추가</span><span id="_id_cndic_up" style="" class="Nsp_gnb Nupdate">업데이트</span></li>
+			<li class="Nnav_cell"><a href="http://frdic.naver.com" id="_id_frdic_href" onclick="clickcr(this, 'DNB.frdic','','',event);" class="Nnav_item">프랑스어</a><span id="_id_frdic_new" style="display:none" class="Nsp_gnb Nnew">신규추가</span><span id="_id_frdic_up" style="display:none" class="Nsp_gnb Nupdate">업데이트</span></li>
+			<li class="Nnav_cell"><a href="http://spdic.naver.com" id="_id_spdic_href" onclick="clickcr(this, 'DNB.spdic','','',event);" class="Nnav_item">스페인어</a><span id="_id_spdic_new" style="display:none" class="Nsp_gnb Nnew">신규추가</span><span id="_id_spdic_up" style="display:none" class="Nsp_gnb Nupdate">업데이트</span></li>
+			<li class="Nnav_cell"><a href="http://dedic.naver.com" id="_id_dedic_href" onclick="clickcr(this, 'DNB.dedic','','',event);" class="Nnav_item">독일어</a><span id="_id_dedic_new" style="display:none" class="Nsp_gnb Nnew">신규추가</span><span id="_id_dedic_up" style="" class="Nsp_gnb Nupdate">업데이트</span></li>
+			<li class="Nnav_cell"><a href="http://vndic.naver.com" id="_id_vndic_href" onclick="clickcr(this, 'DNB.vndic','','',event);" class="Nnav_item">베트남어</a><span id="_id_vndic_new" style="display:none" class="Nsp_gnb Nnew">신규추가</span><span id="_id_vndic_up" style="" class="Nsp_gnb Nupdate">업데이트</span></li>		
+			<!--[D] 더보기 메뉴는 Nmore 클래스 추가-->
+			<li class="Nnav_cell Nmore">
+				<!--[D] 마우스오버시 Nnav_item_active 추가
+						Nmore의 영역을 커서가 벗어나면 해당 Nnav_item의 Nnav_item_active 삭제
+				-->
+				<a href="javascript:;" class="Nnav_item" id="_id_more_layer" onclick="MoreOnclick(); clickcr(this, 'DNB.lmore', '', '',event); return false;"><span class="Nnav_txt">더보기</span><span id="_id_more_new" style="" class="Nsp_gnb Nnew">신규추가</span><span id="_id_more_up" style="display:none" class="Nsp_gnb Nupdate">업데이트</span><span class="Nsp_gnb Nico_more"></span></a>
+				<div class="Nmore_dic" id="_id_li_contain">
+				  <div class="Nalldic_wrap">
+          				    <div class="Nview_dic">
+          				    <h3 class="Nblind">어학사전 바로가기</h3>
+           <div class="Ndic_wrap Nhot">
+              <p class="Ntit">인기</p>
+                 <ul>
+             <li><a href="http://endic.naver.com" title="영어/영영" onfocus="MoreOnfocus();" onclick="clickcr(this, 'DNB.endic','','',event);">영어/영영</a></li>
+             <li><a href="http://krdic.naver.com" title="국어" onfocus="MoreOnfocus();" onclick="clickcr(this, 'DNB.krdic','','',event);">국어</a></li>
+             <li><a href="http://hanja.naver.com" title="한자" onfocus="MoreOnfocus();" onclick="clickcr(this, 'DNB.hanja','','',event);">한자</a></li>
+             <li><a href="http://jpdic.naver.com" title="일본어" onfocus="MoreOnfocus();" onclick="clickcr(this, 'DNB.jpdic','','',event);">일본어</a></li>
+             <li><a href="http://cndic.naver.com" title="중국어" onfocus="MoreOnfocus();" onclick="clickcr(this, 'DNB.cndic','','',event);">중국어<span class="Nsp_gnb Nupdate">update</span></a></li>
+             <li><a href="http://phrasebook.naver.com" title="글로벌회화" onfocus="MoreOnfocus();" onclick="clickcr(this, 'DNB.phrasebook','','',event);">글로벌회화</a></li>
+                 </ul>
+              </div>
+           <div class="Ndic_wrap Nasia">
+              <p class="Ntit">아시아/아프리카</p>
+                 <ul>
+            <li><a href="http://vndic.naver.com" title="베트남어" onclick="clickcr(this, 'DNB.vndic','','',event);">베트남어<span class="Nsp_gnb Nupdate">update</span></a></li>
+            <li><a href="http://uzdic.naver.com" title="우즈베크어" onclick="clickcr(this, 'DNB.uzdic','','',event);">우즈베크어<span class="Nsp_gnb Nupdate">update</span></a></li>
+            <li><a href="http://iddic.naver.com" title="인도네시아어" onclick="clickcr(this, 'DNB.iddic','','',event);">인도네시아어<span class="Nsp_gnb Nupdate">update</span></a></li>
+            <li><a href="http://thdic.naver.com" title="태국어" onclick="clickcr(this, 'DNB.thdic','','',event);">태국어<span class="Nsp_gnb Nupdate">update</span></a></li>
+            <li><a href="http://ardic.naver.com" title="아랍어" onclick="clickcr(this, 'DNB.ardic','','',event);">아랍어<span class="Nsp_gnb Nupdate">update</span></a></li>
+            <li><a href="http://khdic.naver.com" title="캄보디아어" onclick="clickcr(this, 'DNB.khdic','','',event);">캄보디아어<span class="Nsp_gnb Nupdate">update</span></a></li>
+            <li><a href="http://mndic.naver.com" title="몽골어" onclick="clickcr(this, 'DNB.mndic','','',event);">몽골어<span class="Nsp_gnb Nupdate">update</span></a></li>
+            <li><a href="http://hidic.naver.com" title="힌디어" onclick="clickcr(this, 'DNB.hidic','','',event);">힌디어<span class="Nsp_gnb Nupdate">update</span></a></li>
+            <li><a href="http://fadic.naver.com" title="페르시아어" onclick="clickcr(this, 'DNB.fadic','','',event);">페르시아어<span class="Nsp_gnb Nupdate">update</span></a></li>
+            <li><a href="http://nedic.naver.com" title="네팔어" onclick="clickcr(this, 'DNB.nedic','','',event);">네팔어<span class="Nsp_gnb Nupdate">update</span></a></li>
+            <li><a href="http://swdic.naver.com" title="스와힐리어" onclick="clickcr(this, 'DNB.swdic','','',event);">스와힐리어<span class="Nsp_gnb Nupdate">update</span></a></li>
+                 </ul>
+              </div>
+           <div class="Ndic_wrap Neu">
+              <p class="Ntit">유럽/아메리카</p>
+                 <ul>
+          	<li><a href="http://frdic.naver.com" title="프랑스어" onfocus="MoreOnfocus();" onclick="clickcr(this, 'DNB.frdic','','',event);">프랑스어</a></li>
+          	<li><a href="http://dedic.naver.com" title="독일어" onfocus="MoreOnfocus();" onclick="clickcr(this, 'DNB.dedic','','',event);">독일어<span class="Nsp_gnb Nupdate">update</span></a></li>
+          	<li><a href="http://spdic.naver.com" title="스페인어" onfocus="MoreOnfocus();" onclick="clickcr(this, 'DNB.spdic','','',event);">스페인어</a></li>
+          	<li><a href="http://rudic.naver.com" title="러시아어" onfocus="MoreOnfocus();" onclick="clickcr(this, 'DNB.rudic','','',event);">러시아어<span class="Nsp_gnb Nupdate">update</span></a></li>
+          	<li><a href="http://itdic.naver.com" title="이탈리아어" onfocus="MoreOnfocus();" onclick="clickcr(this, 'DNB.itdic','','',event);">이탈리아어<span class="Nsp_gnb Nupdate">update</span></a></li>
+          	<li><a href="http://ladic.naver.com" title="라틴어" onfocus="MoreOnfocus();" onclick="clickcr(this, 'DNB.ladic','','',event);">라틴어<span class="Nsp_gnb Nupdate">update</span></a></li>
+          	<li><a href="http://ptdic.naver.com" title="포르투갈어" onfocus="MoreOnfocus();" onclick="clickcr(this, 'DNB.ptdic','','',event);">포르투갈어<span class="Nsp_gnb Nupdate">update</span></a></li>
+          	<li><a href="http://trdic.naver.com" title="터키어" onfocus="MoreOnfocus();" onclick="clickcr(this, 'DNB.trdic','','',event);">터키어<span class="Nsp_gnb Nupdate">update</span></a></li>
+          	<li><a href="http://gedic.naver.com" title="조지아어" onfocus="MoreOnfocus();" onclick="clickcr(this, 'DNB.gedic','','',event);">조지아어<span class="Nsp_gnb Nupdate">update</span></a></li>
+          	<li><a href="http://aldic.naver.com" title="알바니아어" onfocus="MoreOnfocus();" onclick="clickcr(this, 'DNB.aldic','','',event);">알바니아어<span class="Nsp_gnb Nupdate">update</span></a></li>
+          	<li><a href="http://uadic.naver.com" title="우크라이나어" onfocus="MoreOnfocus();" onclick="clickcr(this, 'DNB.uadic','','',event);">우크라이나어<span class="Nsp_gnb Nupdate">update</span></a></li>
+          	<li><a href="http://rodic.naver.com" title="루마니아어" onfocus="MoreOnfocus();" onclick="clickcr(this, 'DNB.rodic','','',event);">루마니아어<span class="Nsp_gnb Nupdate">update</span></a></li>
+          	<li><a href="http://nldic.naver.com" title="네덜란드어" onfocus="MoreOnfocus();" onclick="clickcr(this, 'DNB.nldic','','',event);">네덜란드어<span class="Nsp_gnb Nupdate">update</span></a></li>
+          	<li><a href="http://svdic.naver.com" title="스웨덴어" onfocus="MoreOnfocus();" onclick="clickcr(this, 'DNB.svdic','','',event);">스웨덴어<span class="Nsp_gnb Nupdate">update</span></a></li>
+          	<li><a href="http://hudic.naver.com" title="헝가리어" onfocus="MoreOnfocus();" onclick="clickcr(this, 'DNB.hudic','','',event);">헝가리어<span class="Nsp_gnb Nupdate">update</span></a></li>
+          	<li><a href="http://pldic.naver.com" title="폴란드어" onfocus="MoreOnfocus();" onclick="clickcr(this, 'DNB.pldic','','',event);">폴란드어<span class="Nsp_gnb Nupdate">update</span></a></li>
+          	<li><a href="http://csdic.naver.com" title="체코어" onfocus="MoreOnfocus();" onclick="clickcr(this, 'DNB.csdic','','',event);">체코어<span class="Nsp_gnb Nupdate">update</span></a></li>
+                 </ul>
+              </div>
+           <div class="Ndic_wrap Ngo_trans">
+            <p class="Ntit">번역기 바로가기</p>
+             <ul>
+             <li><a href="http://translate.naver.com/#/en/ko" onclick="clickcr(this, 'dic.translate', '', '',event);">영어<span class="Nsp_gnb Nico_trans">에서</span>한국어<span class="Nblind">로 번역하기</span></a></li>
+             <li><a href="http://translate.naver.com/#/ja/ko" onclick="clickcr(this, 'dic.translatejpko', '', '',event);">일본어<span class="Nsp_gnb Nico_trans">에서</span>한국어<span class="Nblind">로 번역하기</span></a></li>
+             <li><a href="http://translate.naver.com/#/zh-CN/ko" onclick="clickcr(this, 'dic.translatezhko', '', '',event);">중국어(간체)<span class="Nsp_gnb Nico_trans">에서</span>한국어<span class="Nblind">로 번역하기</span></a></li>
+             <li><a href="http://translate.naver.com/#/zh-TW/ko" onclick="clickcr(this, 'dic.translatezhtwko', '', '',event);">중국어(번체)<span class="Nsp_gnb Nico_trans">에서</span>한국어<span class="Nblind">로 번역하기</span></a></li>
+             <li><a href="http://translate.naver.com/#/fr/ko" onclick="clickcr(this, 'dic.translatefrko', '', '',event);">프랑스어<span class="Nsp_gnb Nico_trans">에서</span>한국어<span class="Nblind">로 번역하기</span><span class="Nsp_gnb Nnew">new</span></a></li>
+             <li><a href="http://translate.naver.com/#/es/ko" onclick="clickcr(this, 'dic.translatespko', '', '',event);">스페인어<span class="Nsp_gnb Nico_trans">에서</span>한국어<span class="Nblind">로 번역하기</span><span class="Nsp_gnb Nnew">new</span></a></li>
+             </ul>
+             <ul class="Nline_dashed_border">
+             <li><a href="http://translate.naver.com/#/ja/en" onclick="clickcr(this, 'dic.translatejpen', '', '',event);">일본어<span class="Nsp_gnb Nico_trans">에서</span>영어<span class="Nblind">로 번역하기</span><span class="Nsp_gnb Nnew">new</span></a></li>
+             <li><a href="http://translate.naver.com/#/zh-CN/en" onclick="clickcr(this, 'dic.translatezhen', '', '',event);">중국어<span class="Nsp_gnb Nico_trans">에서</span>영어<span class="Nblind">로 번역하기</span></a></li>
+             <li><a href="http://translate.naver.com/#/es/en" onclick="clickcr(this, 'dic.translatespen', '', '',event);">스페인어<span class="Nsp_gnb Nico_trans">에서</span>영어<span class="Nblind">로 번역하기</span></a></li>
+             <li><a href="http://translate.naver.com/#/pt/en" onclick="clickcr(this, 'dic.translatepten', '', '',event);">포르투갈어<span class="Nsp_gnb Nico_trans">에서</span>영어<span class="Nblind">로 번역하기</span></a></li>
+             <li><a href="http://translate.naver.com/#/th/en" onclick="clickcr(this, 'dic.translatethen', '', '',event);">태국어<span class="Nsp_gnb Nico_trans">에서</span>영어<span class="Nblind">로 번역하기</span></a></li>
+             <li><a href="http://translate.naver.com/#/id/en" onclick="clickcr(this, 'dic.translateiden', '', '',event);">인도네시아어<span class="Nsp_gnb Nico_trans">에서</span>영어<span class="Nblind">로 번역하기</span></a></li>
+             <li><a href="http://translate.naver.com/#/de/en" onclick="clickcr(this, 'dic.translatedeen', '', '',event);">독일어<span class="Nsp_gnb Nico_trans">에서</span>영어<span class="Nblind">로 번역하기</span></a></li>
+             <li><a href="http://translate.naver.com/#/ru/en" onclick="clickcr(this, 'dic.translateruen', '', '',event);">러시아어<span class="Nsp_gnb Nico_trans">에서</span>영어<span class="Nblind">로 번역하기</span></a></li>
+             <li><a href="http://translate.naver.com/#/vi/en" onclick="clickcr(this, 'dic.translatevnen', '', '',event);">베트남어<span class="Nsp_gnb Nico_trans">에서</span>영어<span class="Nblind">로 번역하기</span></a></li>
+             <li><a href="http://translate.naver.com/#/hi/en" onclick="clickcr(this, 'dic.translatehien', '', '',event);">힌디어<span class="Nsp_gnb Nico_trans">에서</span>영어<span class="Nblind">로 번역하기</span></a></li>
+             <li><a href="http://sitetrans.naver.net" onclick="clickcr(this, 'DTP.site', '', '',event);">사이트 번역</a></li>
+             </ul>
+            </div>
+           <div class="Ndic_wrap Nusr_service">
+            <p class="Ntit">이용자 참여 서비스</p>
+             <ul>
+             <li><a href="javascript:void(0);" onclick="clickcr(this, 'DNB.talkie', '', '',event);window.open('http://talkie.naver.com/english/room-list.dict?mode=pc', 'toktok', 'left=150, top=150, width=430, height=700, toolbar=no, scrollbars=yes, status=no, resizable=no');return false;">영어톡톡<span class="Nsp_gnb Nnew">new</span></a></li>
+             <li><a href="http://usertranslation.naver.com" onclick="clickcr(this, 'DNB.usertrans', '', '',event);">참여번역<span class="Nsp_gnb Nnew">new</span></a></li>
+             <li><a href="http://opendict.naver.com" onclick="clickcr(this, 'DNB.opendict', '', '',event);">오픈사전<span class="Nsp_gnb Nnew">new</span></a></li>
+             <li><a href="http://wquiz.naver.com" onclick="clickcr(this, 'DNB.wordquiz', '', '',event);">단어퀴즈<span class="Nsp_gnb Nnew">new</span></a></li>
+             </ul>
+            </div>
+           <div class="Ndic_wrap Netc_svc">
+             <p class="Ntit Nblind">바로가기</p>
+             <ul>
+             </ul>
+            </div>
+				 	</div>
+				 </div></div>
+			</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	// DIC DNB
+	var nsc = "dic.home";
+	var dnb_query = ''; // 검색 페이지 않으면, null 로 세팅
+	var dnb_service = "dic";
+	//var dnb_query='en'; // 영어 스킨이면
+	var dnb_layer = "none";	//표시할려면 block
+	// GNB
+    var gnb_option = {  //json 형식 옵션 설정 변수
+        gnb_service : "dic", //서비스 명 .naver.com 이하 도메인을 기술 ex) sports.news.naver.com => sports.news
+        gnb_template : "gnb_utf8", //사용하고 있는 템플릿 명(현재 개발된 버전인 gnb_utf8로 설정)
+        gnb_logout : encodeURIComponent(window.location.href), //GNB에서 로그아웃 후 redirect 될 URL, encodeURIComponent('주소')로 인코딩 필요
+        gnb_login : encodeURIComponent(window.location.href), // GNB에서 로그인 후 redirect 될 URL, encodeURIComponent('주소')로 인코딩 필요 (옵션 사항)
+        gnb_brightness : 3, // 1: 어두운색 아이콘, 2: 밝은색 아이콘 + 투명도, 3: 밝은색 아이콘
+        gnb_item_hide_option : 0, //0(default) : 모두 표시, 1 : 로그인버튼 숨기기, 2 : user 레이어 숨기기, 4: Naver Me 영역 숨기기, 8 : 메일알림영역 숨기기, 16 : 프로필 이미지 숨기기, 32 : 임직원혜택 보이기(숨길 영역의 값을 bit sum 하여 적용), 64 : 더보기 아이콘 숨기기
+        gnb_one_naver : 1 //  GNB ONE PC 디자인. 0: 사용 안함(기본값), 1: 일반형, 2: 축소형. gnb_one_naver 옵션을 사용(1 또는 2) 설정시 gnb_brightness 설정은 무시.
+    }
+    
+    addOnloadEventListener(function () {
+	});
+</script>
+<!-- //공통 GNB -->
+	</div>
+	<div id="container">
+		
+<!-- body -->
+<div id="content" class="all">
+        <div class="dictionary">
+        <!-- [D] class에 foucs, unfocus 속성 추가해주시면 사이즈가 변동됩니다. -->
+            <h2>어학사전</h2>
+            <ul class="dic_lst">
+            <li class="fc"><a href="http://translate.naver.com" class="lst_trans" onclick="clickcr(this, 'dic.translation', '', '',event);">번역기</a></li>
+            <li><a href="http://wordbook.naver.com" class="lst_word" onclick="clickcr(this, 'dic.wordbook', '', '',event);">단어장</a></li>
+            <!-- [D] 지식백과 포커스 시에만 작은창 사전 li 에 mini 클라스 추가 부탁드립니다 class="mini" -->
+            <li id="miniDict" class="mini"><a href="javascript:void(0);" class="lst_dic" onclick="clickcr(this, 'dic.minidic', '', '',event);openSdic('http://endic.naver.com/popManager.nhn?m=miniPopMain');return false;">작은창 사전</a></li>
+            <li><a href="http://opendict.naver.com/participation/word_list.dict#common/register/all/ko/" class="open" onclick="clickcr(this, 'dic.opendict', '', '',event);">오픈사전</a></li>
+            </ul>
+
+            
+<div class="fra_alphabet frdic_div init_input" style="display:none">
+ 	<div class="fra_alphabet_shadow">
+     	<div class="fra_alphabet_inner">
+         	<ul><li></li>
+            </ul>
+         </div>
+     </div>
+     <span class="arrow_d on"></span>
+ </div>
+            <div class="search_form init_input">
+            	<h3 class="blind" id="dic_search_form_head">어학사전 전체 검색</h3>
+                <form id="dicSearch" name="dicSearch" method="get" action="/search.nhn" onsubmit="return selectAction(this)">
+                    <div class="input_search dictionary-search">
+                        <label for="dictionary-search-txt" class="blind">단어입력</label>
+                        <input id="dictionary-search-txt" type="text" title="단어입력" name="dicQuery" class="input_txt dicQuery" autocomplete="off">
+                        <div class="results" id="dictionary-search-results"></div>
+                    </div>
+                    <input type="image" src="http://dicimg.naver.net/dic-home-service/style/201709211025/img/btn_search.gif" alt="어학사전 전체 검색" class="btn_search">
+                    <input type="hidden" name="query" value="">
+					<input type="hidden" name="target" value="dic">
+					<input type="hidden" name="ie" value="utf8">
+					<input type="hidden" name="query_utf" value="">
+					<input type="hidden" name="isOnlyViewEE" value="">
+                </form>
+                <span class="lft_bg"></span>
+                <a href="#" class="btn_arw" onclick="return false">자동완성 펼치기</a>
+                <a href="#" class="btn_ime korean btn_ime" dictype="vndic" id="vndicWriterBtn" onclick="return false" style="display:none">베트남어입력기</a>                
+                <a href="#" class="btn_ime_wrt btn_ime" dictype="handwrite" onclick="return false" style="display:none">한자 필기인식기</a>
+                <a href="#" class="btn_ime_jp btn_ime" dictype="jpdic" onclick="return false" style="display:none">일본어 입력기</a>
+                <a href="#" class="btn_ime_style btn_ime" dictype="hanja" onclick="return false" style="display:none">한자 모양자 찾기</a>
+                <a href="#" class="btn_ime_pinyin btn_ime" dictype="cndic" onclick="return false" style="display:none">중국어 병음입력기</a>
+                <a href="#" class="btn_ime korean" dictype="trdic" id="trdicWriterBtn" onclick="return false" style="display:none">터키어입력기</a>
+                <a href="#" class="btn_ime korean btn_ime" dictype="rudic" id="rudicWriterBtn" onclick="return false" style="display:none">러시아어입력기</a>
+                <a href="#" class="btn_ime korean btn_ime" dictype="mndic" id="mndicWriterBtn" onclick="return false" style="display:none">몽골어입력기</a>   
+                <a href="#" class="btn_ime korean btn_ime" dictype="ptdic" id="ptdicWriterBtn" onclick="return false" style="display:none">포르투갈어입력기</a>                
+                <a href="#" class="btn_ime korean btn_ime" dictype="uadic" id="uadicWriterBtn" onclick="return false" style="display:none">우크라이나어입력기</a>
+                <a href="#" class="btn_ime korean btn_ime" dictype="aldic" id="aldicWriterBtn" onclick="return false" style="display:none">알바니아어입력기</a>
+                <a href="#" class="btn_ime korean btn_ime" dictype="gedic" id="gedicWriterBtn" onclick="return false" style="display: none;">조지아어입력기</a>
+                <a href="#" class="btn_ime korean btn_ime" dictype="ladic" id="ladicWriterBtn" onclick="return false" style="display:none">라틴어입력기</a>
+                <a href="#" class="btn_ime korean btn_ime" dictype="itdic" id="itdicWriterBtn" onclick="return false" style="display:none">이탈리아어입력기</a>    
+                <a href="#" class="btn_ime korean btn_ime" dictype="rodic" id="rodicWriterBtn" onclick="return false" style="display:none">루마니아어입력기</a>
+                <a href="#" class="btn_ime korean btn_ime" dictype="nldic" id="nldicWriterBtn" onclick="return false" style="display:none">네덜란드어입력기</a>
+                <a href="#" class="btn_ime korean btn_ime" dictype="pldic" id="pldicWriterBtn" onclick="return false" style="display:none">폴란드어입력기</a>
+                <a href="#" class="btn_ime korean btn_ime" dictype="svdic" id="svdicWriterBtn" onclick="return false" style="display:none">스웨덴어입력기</a>
+                <a href="#" class="btn_ime korean btn_ime" dictype="hudic" id="hudicWriterBtn" onclick="return false" style="display:none">헝가리어입력기</a>
+                <a href="#" class="btn_ime korean btn_ime" dictype="csdic" id="csdicWriterBtn" onclick="return false" style="display:none">체코어입력기</a>
+                <a href="#" class="btn_ime korean btn_ime" dictype="hidic" id="hidicWriterBtn" onclick="return false" style="display:none">힌디어입력기</a>
+                <a href="#" class="btn_ime korean btn_ime" dictype="fadic" id="fadicWriterBtn" onclick="return false" style="display:none">페르시아어입력기</a>
+                <a href="#" class="btn_ime korean btn_ime" dictype="thdic" id="thdicWriterBtn" onclick="return false" style="display:none">태국어입력기</a>
+                <a href="#" class="btn_ime korean btn_ime" dictype="ardic" id="ardicWriterBtn" onclick="return false" style="display:none">아랍어입력기</a>
+                <a href="#" class="btn_ime korean btn_ime" dictype="nedic" id="nedicWriterBtn" onclick="return false" style="display:none">네팔어입력기</a>
+                
+                	         	
+                		<p class="info dicSearch endic entry_number" dictype="endic" style="display:none">
+                	   	
+                	
+                		
+                			영어/영영사전 표제어 수 5,353,702건       
+                		
+                		
+                	
+                	             	
+                
+                	   	
+                	
+                		
+                		
+                			| 예문 수 31,428,044건
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch krdic entry_number" dictype="krdic" style="display:none">
+                	   	
+                	
+                		
+                			국어사전 표제어 수 911,056건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch jpdic entry_number" dictype="jpdic" style="display:none">
+                	   	
+                	
+                		
+                			일본어사전 표제어 수 627,945건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch hanja entry_number" dictype="hanja" style="display:none">
+                	   	
+                	
+                		
+                			한자사전 표제어 수 564,290건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch cndic entry_number" dictype="cndic" style="display:none">
+                	   	
+                	
+                		
+                			중국어사전 표제어 수 2,018,161건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch frdic entry_number" dictype="frdic" style="display:none">
+                	   	
+                	
+                		
+                			프랑스어사전 표제어 수 1,754,850건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch spdic entry_number" dictype="spdic" style="display:none">
+                	   	
+                	
+                		
+                			스페인어사전 표제어 수 431,491건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch dedic entry_number" dictype="dedic" style="display:none">
+                	   	
+                	
+                		
+                			독일어사전 표제어 수 224,866건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch vndic entry_number" dictype="vndic" style="display:none">
+                	   	
+                	
+                		
+                			베트남어사전 표제어 수 168,891건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch trdic entry_number" dictype="trdic" style="display:none">
+                	   	
+                	
+                		
+                			터키어사전 표제어 수 79,030건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch rudic entry_number" dictype="rudic" style="display:none">
+                	   	
+                	
+                		
+                			러시아어사전 표제어 수 426,134건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch mndic entry_number" dictype="mndic" style="display:none">
+                	   	
+                	
+                		
+                			몽골어사전 표제어 수 64,927건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch iddic entry_number" dictype="iddic" style="display:none">
+                	   	
+                	
+                		
+                			인도네시아어사전 표제어 수 184,149건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch phrasebook entry_number" dictype="phrasebook" style="display:none">
+                	   	
+                	
+                		
+                			글로벌회화 표제어 수 121,268건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch ptdic entry_number" dictype="ptdic" style="display:none">
+                	   	
+                	
+                		
+                			포르투갈어사전 표제어 수 228,382건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch aldic entry_number" dictype="aldic" style="display:none">
+                	   	
+                	
+                		
+                			알바니아어사전 표제어 수 19,497건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch gedic entry_number" dictype="gedic" style="display:none">
+                	   	
+                	
+                		
+                			조지아어사전 표제어 수 40,029건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch khdic entry_number" dictype="khdic" style="display:none">
+                	   	
+                	
+                		
+                			캄보디아어사전 표제어 수 10,254건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch uadic entry_number" dictype="uadic" style="display:none">
+                	   	
+                	
+                		
+                			우크라이나어사전 표제어 수 93,236건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch uzdic entry_number" dictype="uzdic" style="display:none">
+                	   	
+                	
+                		
+                			우즈베크어사전 표제어 수 44,920건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch ladic entry_number" dictype="ladic" style="display:none">
+                	   	
+                	
+                		
+                			라틴어사전 표제어 수 70,664건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch fadic entry_number" dictype="fadic" style="display:none">
+                	   	
+                	
+                		
+                			페르시아어사전 표제어 수 106,181건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch rodic entry_number" dictype="rodic" style="display:none">
+                	   	
+                	
+                		
+                			루마니아어사전 표제어 수 61,684건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch swdic entry_number" dictype="swdic" style="display:none">
+                	   	
+                	
+                		
+                			스와힐리어사전 표제어 수 21,116건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch csdic entry_number" dictype="csdic" style="display:none">
+                	   	
+                	
+                		
+                			체코어사전 표제어 수 61,360건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch pldic entry_number" dictype="pldic" style="display:none">
+                	   	
+                	
+                		
+                			폴란드어사전 표제어 수 99,485건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch ardic entry_number" dictype="ardic" style="display:none">
+                	   	
+                	
+                		
+                			아랍어사전 표제어 수 99,520건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch nldic entry_number" dictype="nldic" style="display:none">
+                	   	
+                	
+                		
+                			네덜란드어사전 표제어 수 189,780건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch hudic entry_number" dictype="hudic" style="display:none">
+                	   	
+                	
+                		
+                			헝가리어사전 표제어 수 112,388건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch thdic entry_number" dictype="thdic" style="display:none">
+                	   	
+                	
+                		
+                			태국어사전 표제어 수 183,871건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch hidic entry_number" dictype="hidic" style="display:none">
+                	   	
+                	
+                		
+                			힌디어사전 표제어 수 58,425건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch itdic entry_number" dictype="itdic" style="display:none">
+                	   	
+                	
+                		
+                			이탈리아어사전 표제어 수 144,547건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch svdic entry_number" dictype="svdic" style="display:none">
+                	   	
+                	
+                		
+                			스웨덴어사전 표제어 수 124,791건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+                	         	
+                		<p class="info dicSearch dic entry_number" dictype="dic" style="display: block;">
+                	   	
+                	
+                		
+                			어학사전 전체 표제어 수 14,700,890건       
+                		
+                		
+                	
+                	    
+                		</p>   
+                	             	
+                
+            </div>
+            <a href="#" class="btn_lft" onclick="return false">어학사전 닫기</a> 
+            <a href="#" class="btn_rgt" onclick="return false">지식백과 닫기</a>           
+        </div>
+    </div>
+    <div class="view_all on">
+
+    </div>
+      <div class="dictionary-search">
+        <input type="text" id="dictionary-search-txt" autofocus>
+        <div class="results" id="dictionary-search-results"></div>
+      </div>
+    <div class="banner">
+    	<ul class="banner_lst">
+    	
+	        <li class="fc" onclick="clickcr(this, 'prd.banner', '1', '',event);"><a href="http://translate.naver.com/#/zh-CN/ko"><img src="http://dicimg.naver.net/dic-home-service/style/201709211025/img/banner58.png" alt="중국어번역기 - 13억 인구와 자유롭게 소통해보세요!"></a></li>
+	        <li onclick="clickcr(this, 'prd.banner', '2', '',event);"><a href="http://itdic.naver.com"><img src="http://dicimg.naver.net/dic-home-service/style/201709211025/img/banner39.png" alt="이탈리아어사전 출시 - Buon giorno. 이탈리아어사전 지금 만나보세요!" border="0"></a></li>
+	        <li onclick="clickcr(this, 'prd.banner', '3', '',event);"><a href="http://navercast.naver.com" target="_blank"><img src="http://dicimg.naver.net/dic-home-service/style/201709211025/img/banner09.jpg" alt="지식백과 네이버캐스트 전문가와 함께 만들어가는 네이버만의 컨텐츠를 감상하세요." border="0"></a></li>
+	   
+        </ul>        
+    </div>    
+    
+<div class="ime ime_vn vndic_div init_input ime_type_vn" style="display:none" imetype="ime_type_vn"></div>
+    
+<div class="ime ime_jp jpdic_div init_input" style="display:none">
+        <ul class="seleted_ime">
+        <li class="lang_ime fc active" kanatype="hira"><a href="#" onclick="clickcr(this, 'jim.hira', '', '',event);return false" class="lang">히라가나</a></li>
+        <li class="lang_ime" kanatype="gata"><a href="#" onclick="clickcr(this, 'jim.kata', '', '',event);return false" class="lang">가타가나</a></li>
+        </ul>
+        <ul class="seleted_device">
+        <li class="fc active">
+            <div class="ime_content jp" kanatype="hira">
+                <table summary="일본어 히라가나 입력" kanatype="hira">
+                <caption>일본어 히라가나를 클릭 해주시면 됩니다</caption>
+                <thead>
+                <tr>
+                <th scope="col" class="fc">&nbsp;</th>
+                <th scope="col" colspan="2">ㅇ</th>
+                <th scope="col" class="rgt_none_line">ㅋ</th>
+                <th scope="col" class="lft_none_line">ㄱ</th>
+                <th scope="col" class="rgt_none_line">ㅅ</th>
+                <th scope="col" class="lft_none_line">ㅈ</th>
+                <th scope="col" class="rgt_none_line">ㅌ</th>
+                <th scope="col" class="lft_none_line rgt_none_line">ㄷ</th>
+                <th scope="col" class="lft_none_line">촉</th>
+                <th scope="col">ㄴ</th>
+                <th scope="col" class="rgt_none_line">ㅎ</th>
+                <th scope="col" class="rgt_none_line lft_none_line">ㅂ</th>
+                <th scope="col" class="lft_none_line">ㅃ</th>
+                <th scope="col">ㅁ</th>
+                <th scope="col" colspan="2">야</th>
+                <th scope="col">ㄹ</th>
+                <th scope="col" colspan="2">와</th>
+                <th scope="col">&nbsp;</th>
+                </tr>
+                </thead>
+                <tbody>
+                 <tr>
+                <th scope="col">ㅏ</th>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">あ<em>a</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ぁ<em>&nbsp;</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">か<em>ka</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">が<em>ga</em></a></span></td>
+                <td class="rgt_none_line"><span><a href="#" onclick="return false">さ<em>sa</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ざ<em>za</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">た<em>ta</em></a></span></td>
+                <td class="lft_none_line rgt_none_line wp1"><span><a href="#" onclick="return false">だ<em>da</em></a></span></td>
+                <td class="lft_none_line">&nbsp;</td>
+                <td class="wp3"><span><a href="#" onclick="return false">な<em>na</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">は<em>ha</em></a></span></td>
+                <td class="lft_none_line rgt_none_line wp1"><span><a href="#" onclick="return false">ば<em>ba</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ぱ<em>pa</em></a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ま<em>ma</em></a></span></td>
+                <td class="rgt_none_line"><span><a href="#" onclick="return false">や<em>ya</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ゃ<em>lya</em></a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ら<em>ra</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">わ<em>wa</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ゎ<em>lwa</em></a></span></td>
+                <td class="wp2"><span><a href="#" onclick="return false">ん<em>n</em></a></span></td>
+                </tr>
+                <tr>
+                <th scope="col">ㅣ</th>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">い<em>i</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ぃ<em>&nbsp;</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">き<em>ki</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ぎ<em>gi</em></a></span></td>
+                <td class="rgt_none_line"><span><a href="#" onclick="return false">し<em>si</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">じ<em>zi</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">ち<em>ti</em></a></span></td>
+                <td class="lft_none_line rgt_none_line wp1"><span><a href="#" onclick="return false">ぢ<em>di</em></a></span></td>
+                <td class="lft_none_line">&nbsp;</td>
+                <td class="wp3"><span><a href="#" onclick="return false">に<em>ni</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">ひ<em>hi</em></a></span></td>
+                <td class="lft_none_line rgt_none_line wp1"><span><a href="#" onclick="return false">び<em>bi</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ぴ<em>pi</em></a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">み<em>mi</em></a></span></td>
+                <td class="rgt_none_line">&nbsp;</td>
+                <td class="lft_none_line">&nbsp;</td>
+                <td class="wp3"><span><a href="#" onclick="return false">り<em>ri</em></a></span></td>
+                <td class="rgt_none_line wp1">&nbsp;</td>
+                <td class="lft_none_line">&nbsp;</td>
+                <td class="wp2">&nbsp;</td>
+                </tr>
+                <tr>
+                <th scope="col">ㅜ</th>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">う<em>u</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ぅ<em>&nbsp;</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">く<em>ku</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ぐ<em>gu</em></a></span></td>
+                <td class="rgt_none_line"><span><a href="#" onclick="return false">す<em>su</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ず<em>zu</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">つ<em>tu</em></a></span></td>
+                <td class="lft_none_line rgt_none_line wp1"><span><a href="#" onclick="return false">づ<em>du</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">っ<em>&nbsp;</em></a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ぬ<em>nu</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">ふ<em>hu</em></a></span></td>
+                <td class="lft_none_line rgt_none_line wp1"><span><a href="#" onclick="return false">ぶ<em>bu</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ぷ<em>pu</em></a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">む<em>mu</em></a></span></td>
+                <td class="rgt_none_line"><span><a href="#" onclick="return false">ゆ<em>yu</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ゅ<em>lyu</em></a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">る<em>ru</em></a></span></td>
+                <td class="rgt_none_line wp1">&nbsp;</td>
+                <td class="lft_none_line">&nbsp;</td>
+                <td class="wp2">&nbsp;</td>
+                </tr>
+                <tr>
+                <th scope="col">ㅔ</th>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">え<em>e</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ぇ<em>&nbsp;</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">け<em>ke</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">げ<em>ge</em></a></span></td>
+                <td class="rgt_none_line"><span><a href="#" onclick="return false">せ<em>se</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ぜ<em>ze</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">て<em>te</em></a></span></td>
+                <td class="lft_none_line rgt_none_line wp1"><span><a href="#" onclick="return false">で<em>de</em></a></span></td>
+                <td class="lft_none_line">&nbsp;</td>
+                <td class="wp3"><span><a href="#" onclick="return false">ね<em>ne</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">へ<em>he</em></a></span></td>
+                <td class="lft_none_line rgt_none_line wp1"><span><a href="#" onclick="return false">べ<em>be</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ぺ<em>pe</em></a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">め<em>me</em></a></span></td>
+                <td class="rgt_none_line">&nbsp;</td>
+                <td class="lft_none_line">&nbsp;</td>
+                <td class="wp3"><span><a href="#" onclick="return false">れ<em>re</em></a></span></td>
+                <td class="rgt_none_line wp1">&nbsp;</td>
+                <td class="lft_none_line">&nbsp;</td>
+                <td class="wp2">&nbsp;</td>
+                </tr>
+                <tr>
+                <th scope="col">ㅗ</th>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">お<em>o</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ぉ<em>&nbsp;</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">こ<em>ko</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ご<em>go</em></a></span></td>
+                <td class="rgt_none_line"><span><a href="#" onclick="return false">そ<em>so</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ぞ<em>zo</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">と<em>to</em></a></span></td>
+                <td class="lft_none_line rgt_none_line wp1"><span><a href="#" onclick="return false">ど<em>do</em></a></span></td>
+                <td class="lft_none_line">&nbsp;</td>
+                <td class="wp3"><span><a href="#" onclick="return false">の<em>no</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">ほ<em>ho</em></a></span></td>
+                <td class="lft_none_line rgt_none_line wp1"><span><a href="#" onclick="return false">ぼ<em>bo</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ぽ<em>po</em></a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">も<em>mo</em></a></span></td>
+                <td class="rgt_none_line"><span><a href="#" onclick="return false">よ<em>yo</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ょ<em>lyo</em></a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ろ<em>ro</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">を<em>wo</em></a></span></td>
+                <td class="lft_none_line">&nbsp;</td>
+                <td class="wp2">&nbsp;</td>
+                </tr>
+                </tbody>
+                </table>
+                <table summary="일본어 가타가나 입력" kanatype="gata" style="display:none">
+                <caption>일본어 가타가나를 클릭 해주시면 됩니다.</caption>
+                <thead>
+                <tr>
+                <th scope="col" class="fc">&nbsp;</th>
+                <th scope="col" colspan="2">ㅇ</th>
+                <th scope="col" class="rgt_none_line">ㅋ</th>
+                <th scope="col" class="lft_none_line">ㄱ</th>
+                <th scope="col" class="rgt_none_line">ㅅ</th>
+                <th scope="col" class="lft_none_line">ㅈ</th>
+                <th scope="col" class="rgt_none_line">ㅌ</th>
+                <th scope="col" class="lft_none_line rgt_none_line">ㄷ</th>
+                <th scope="col" class="lft_none_line">촉</th>
+                <th scope="col">ㄴ</th>
+                <th scope="col" class="rgt_none_line">ㅎ</th>
+                <th scope="col" class="rgt_none_line lft_none_line">ㅂ</th>
+                <th scope="col" class="lft_none_line">ㅃ</th>
+                <th scope="col">ㅁ</th>
+                <th scope="col" colspan="2">야</th>
+                <th scope="col">ㄹ</th>
+                <th scope="col" colspan="2">와</th>
+                <th scope="col">&nbsp;</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <th scope="col">ㅏ</th>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">ア<em>a</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ァ<em>&nbsp;</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">カ<em>ka</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ガ<em>ga</em></a></span></td>
+                <td class="rgt_none_line"><span><a href="#" onclick="return false">サ<em>sa</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ザ<em>za</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">タ<em>ta</em></a></span></td>
+                <td class="lft_none_line rgt_none_line wp1"><span><a href="#" onclick="return false">ダ<em>da</em></a></span></td>
+                <td class="lft_none_line">&nbsp;</td>
+                <td class="wp3"><span><a href="#" onclick="return false">ナ<em>na</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">ハ<em>ha</em></a></span></td>
+                <td class="lft_none_line rgt_none_line wp1"><span><a href="#" onclick="return false">バ<em>ba</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">パ<em>pa</em></a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">マ<em>ma</em></a></span></td>
+                <td class="rgt_none_line"><span><a href="#" onclick="return false">ヤ<em>ya</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ャ<em>lya</em></a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ラ<em>ra</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">ワ<em>wa</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ヮ<em>lwa</em></a></span></td>
+                <td class="wp2"><span><a href="#" onclick="return false">ン<em>n</em></a></span></td>
+                </tr>
+                <tr>
+                <th scope="col">ㅣ</th>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">イ<em>i</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ィ<em>&nbsp;</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">キ<em>ki</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ギ<em>gi</em></a></span></td>
+                <td class="rgt_none_line"><span><a href="#" onclick="return false">シ<em>si</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ジ<em>zi</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">チ<em>ti</em></a></span></td>
+                <td class="lft_none_line rgt_none_line wp1"><span><a href="#" onclick="return false">ヂ<em>di</em></a></span></td>
+                <td class="lft_none_line">&nbsp;</td>
+                <td class="wp3"><span><a href="#" onclick="return false">ニ<em>ni</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">ヒ<em>hi</em></a></span></td>
+                <td class="lft_none_line rgt_none_line wp1"><span><a href="#" onclick="return false">ビ<em>bi</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ピ<em>pi</em></a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ミ<em>mi</em></a></span></td>
+                <td class="rgt_none_line">&nbsp;</td>
+                <td class="lft_none_line">&nbsp;</td>
+                <td class="wp3"><span><a href="#" onclick="return false">リ<em>ri</em></a></span></td>
+                <td class="rgt_none_line wp1">&nbsp;</td>
+                <td class="lft_none_line">&nbsp;</td>
+                <td class="wp2">&nbsp;</td>
+                </tr>
+                <tr>
+                <th scope="col">ㅜ</th>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">ウ<em>u</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ゥ<em>&nbsp;</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">ク<em>ku</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">グ<em>gu</em></a></span></td>
+                <td class="rgt_none_line"><span><a href="#" onclick="return false">ス<em>su</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ズ<em>zu</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">ツ<em>tu</em></a></span></td>
+                <td class="lft_none_line rgt_none_line wp1"><span><a href="#" onclick="return false">ヅ<em>du</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ッ<em>&nbsp;</em></a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ヌ<em>nu</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">フ<em>hu</em></a></span></td>
+                <td class="lft_none_line rgt_none_line wp1"><span><a href="#" onclick="return false">ブ<em>bu</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">プ<em>pu</em></a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ム<em>mu</em></a></span></td>
+                <td class="rgt_none_line"><span><a href="#" onclick="return false">ユ<em>yu</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ュ<em>lyu</em></a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ル<em>ru</em></a></span></td>
+                <td class="rgt_none_line wp1">&nbsp;</td>
+                <td class="lft_none_line">&nbsp;</td>
+                <td class="wp2"><span><a href="#" onclick="return false">ヴ<em>vu</em></a></span></td>
+                </tr>
+                <tr>
+                <th scope="col">ㅔ</th>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">エ<em>e</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ェ<em>&nbsp;</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">ケ<em>ke</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ゲ<em>ge</em></a></span></td>
+                <td class="rgt_none_line"><span><a href="#" onclick="return false">セ<em>se</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ゼ<em>ze</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">テ<em>te</em></a></span></td>
+                <td class="lft_none_line rgt_none_line wp1"><span><a href="#" onclick="return false">デ<em>de</em></a></span></td>
+                <td class="lft_none_line">&nbsp;</td>
+                <td class="wp3"><span><a href="#" onclick="return false">ネ<em>ne</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">ヘ<em>he</em></a></span></td>
+                <td class="lft_none_line rgt_none_line wp1"><span><a href="#" onclick="return false">ベ<em>be</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ペ<em>pe</em></a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">メ<em>me</em></a></span></td>
+                <td class="rgt_none_line">&nbsp;</td>
+                <td class="lft_none_line">&nbsp;</td>
+                <td class="wp3"><span><a href="#" onclick="return false">レ<em>re</em></a></span></td>
+                <td class="rgt_none_line wp1">&nbsp;</td>
+                <td class="lft_none_line">&nbsp;</td>
+                <td class="wp2" rowspan="2"><span><a href="#" onclick="return false">ー<em>-</em></a></span></td>
+                </tr>
+                <tr>
+                <th scope="col">ㅗ</th>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">オ<em>o</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ォ<em>&nbsp;</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">コ<em>ko</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ゴ<em>go</em></a></span></td>
+                <td class="rgt_none_line"><span><a href="#" onclick="return false">ソ<em>so</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ゾ<em>zo</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">ト<em>to</em></a></span></td>
+                <td class="lft_none_line rgt_none_line wp1"><span><a href="#" onclick="return false">ド<em>do</em></a></span></td>
+                <td class="lft_none_line">&nbsp;</td>
+                <td class="wp3"><span><a href="#" onclick="return false">ノ<em>no</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">ホ<em>ho</em></a></span></td>
+                <td class="lft_none_line rgt_none_line wp1"><span><a href="#" onclick="return false">ボ<em>bo</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ポ<em>po</em></a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">モ<em>mo</em></a></span></td>
+                <td class="rgt_none_line"><span><a href="#" onclick="return false">ヨ<em>yo</em></a></span></td>
+                <td class="lft_none_line"><span><a href="#" onclick="return false">ョ<em>lyo</em></a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ロ<em>ro</em></a></span></td>
+                <td class="rgt_none_line wp1"><span><a href="#" onclick="return false">ヲ<em>wo</em></a></span></td>
+                <td class="lft_none_line">&nbsp;</td>
+                </tr>
+                </tbody>
+                </table>
+                <form>
+                <!-- [D]히라가나 일때 출력 -->
+                <div class="ime_btm_alert" kanatype="hira">
+                	<p class="p1">한글/로마자로 히라가나 찾기</p>
+                	<span class="text"> 
+		                <label for="seek_hira" class="blind">한글/로마자로 히라가나 찾기</label> 
+		                <input id="seek_hira" type="text" size="3" maxlength="3" kanatype="hira" class="controlkeyindex"> 
+		                <span class="ime_btm_arw"></span> 
+		                <strong class="default hira">히라가나</strong>
+	                </span>            
+                    <span class="explain step1 hira">한글이나 로마자(영문)로 발음을 입력해주세요.</span>
+                    <span class="explain step3 hira" style="display:none">원하는 가나를 선택해주세요.</span> 
+                </div> 
+                <!-- //[D]히라가나 일때 출력 -->
+                <!-- [D]가타가나 일때 출력 -->
+                <div class="ime_btm_alert v2" style="display:none" kanatype="gata">
+	                <p class="p1">한글/로마자로 가타가나 찾기</p>
+	                <span class="text"> 
+	                	<label for="seek_gata" class="blind">한글/로마자로 가타가나 찾기</label>
+		                <input id="seek_gata" type="text" size="3" maxlength="3" kanatype="gata" class="controlkeyindex"> 
+		                <span class="ime_btm_arw"></span> 
+		                <strong class="default gata">히라가나</strong>
+	                </span>            
+	                <span class="explain step1 gata">한글이나 로마자(영문)로 발음을 입력해주세요.</span>
+                    <span class="explain step3 gata" style="display:none">원하는 가나를 선택해주세요.</span> 
+	             </div>
+                </form>
+                <!-- //[D]가타가나 일때 출력 -->
+            </div>            
+        </li>
+        </ul>
+        <a href="#" onclick="return false" class="btn_clse ime_btn_clse" dictype="jpdic">일본어 입력기 레이어 닫기</a>
+    </div>
+    
+<div class="ime ime_cn cndic_div init_input" style="display:none">
+	<ul class="seleted_ime">
+		<li class="lang_ime"><span>병음입력기로 간편하게 입력하세요</span>
+		</li>
+	</ul>
+	<ul class="seleted_device">
+        <li class="fc active">
+            <div class="ime_content cn">
+                <table summary="중국어 자음 입력">
+                <caption>중국어 자음을 클릭 해주시면 됩니다.</caption>
+                <tbody><tr class="tb">
+                <th scope="col" rowspan="2" class="rb bb">자음</th>
+                <td><span><a href="#" onclick="return false">b</a></span></td>
+                <td><span><a href="#" onclick="return false">c</a></span></td>
+                <td><span><a href="#" onclick="return false">ch</a></span></td>
+                <td><span><a href="#" onclick="return false">d</a></span></td>
+                <td><span><a href="#" onclick="return false">f</a></span></td>
+                <td><span><a href="#" onclick="return false">g</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">h</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">j</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">k</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">l</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">m</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">n</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">p</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">q</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">r</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">s</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">sh</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">t</a></span></td>
+                <td class="wp6"><span><a href="#" onclick="return false">w</a></span></td>
+                <td class="rb wp6"><span><a href="#" onclick="return false">x</a></span></td>
+                </tr>
+                <tr class="bb">
+                <td><span><a href="#" onclick="return false">y</a></span></td>
+                <td><span><a href="#" onclick="return false">z</a></span></td>
+                <td><span><a href="#" onclick="return false">zh</a></span></td>
+                <td><span><a href="#" onclick="return false">ng</a></span></td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td class="wp3">&nbsp;</td>
+                <td class="wp3">&nbsp;</td>
+                <td class="wp3">&nbsp;</td>
+                <td class="wp3">&nbsp;</td>
+                <td class="wp3">&nbsp;</td>
+                <td class="wp3">&nbsp;</td>
+                <td class="wp3">&nbsp;</td>
+                <td class="wp3">&nbsp;</td>
+                <td class="wp3">&nbsp;</td>
+                <td class="wp3">&nbsp;</td>
+                <td class="wp3">&nbsp;</td>
+                <td class="wp3">&nbsp;</td>
+                <td class="wp6">&nbsp;</td>
+                <td class="rb wp6">&nbsp;</td>
+                </tr>
+                </tbody></table>
+                <table summary="중국어 모음 입력">
+                <caption>중국어 모음을 클릭 해주시면 됩니다.</caption>
+                <tbody><tr class="tb">
+                <th scope="col">모음</th>
+                <td><span><a href="#" onclick="return false">a</a></span></td>
+                <td><span><a href="#" onclick="return false">e</a></span></td>
+                <td><span><a href="#" onclick="return false">i</a></span></td>
+                <td><span><a href="#" onclick="return false">o</a></span></td>
+                <td><span><a href="#" onclick="return false">u</a></span></td>
+                <td><span><a href="#" onclick="return false">ü</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ai</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ao</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ei</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ia</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ie</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">io</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">iu</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ou</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ua</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ui</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">uo</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ue</a></span></td>
+                <td class="wp6"><span><a href="#" onclick="return false">iao</a></span></td>
+                <td class="wp6"><span><a href="#" onclick="return false">uai</a></span></td>
+                </tr>
+                <tr>
+                <th scope="col">1성</th>
+                <td><span><a href="#" onclick="return false">ā</a></span></td>
+                <td><span><a href="#" onclick="return false">ē</a></span></td>
+                <td><span><a href="#" onclick="return false">ī</a></span></td>
+                <td><span><a href="#" onclick="return false">ō</a></span></td>
+                <td><span><a href="#" onclick="return false">ū</a></span></td>
+                <td><span><a href="#" onclick="return false">ǖ</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">āi</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">āo</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ēi</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">iā</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">iē</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">iō</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">iū</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ōu</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">uā</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">uī</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">uō</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">uē</a></span></td>
+                <td class="wp6"><span><a href="#" onclick="return false">iāo</a></span></td>
+                <td class="wp6"><span><a href="#" onclick="return false">uāo</a></span></td>
+                </tr>
+                <tr>
+                <th scope="col">2성</th>
+                <td><span><a href="#" onclick="return false">á</a></span></td>
+                <td><span><a href="#" onclick="return false">é</a></span></td>
+                <td><span><a href="#" onclick="return false">í</a></span></td>
+                <td><span><a href="#" onclick="return false">ó</a></span></td>
+                <td><span><a href="#" onclick="return false">ú</a></span></td>
+                <td><span><a href="#" onclick="return false">ǘ</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ái</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">áo</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">éi</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">iá</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ié</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ió</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">iú</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">óu</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">uá</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">uí</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">uó</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ué</a></span></td>
+                <td class="wp6"><span><a href="#" onclick="return false">iáo</a></span></td>
+                <td class="wp6"><span><a href="#" onclick="return false">uái</a></span></td>
+                </tr>
+                <tr>
+                <th scope="col">3성</th>
+                <td><span><a href="#" onclick="return false">ǎ</a></span></td>
+                <td><span><a href="#" onclick="return false">ě</a></span></td>
+                <td><span><a href="#" onclick="return false">ǐ</a></span></td>
+                <td><span><a href="#" onclick="return false">ǒ</a></span></td>
+                <td><span><a href="#" onclick="return false">ǔ</a></span></td>
+                <td><span><a href="#" onclick="return false">ǚ</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ǎi</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ǎo</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ěi</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">iǎ</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">iě</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">iǒ</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">iǔ</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ǒu</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">uǎ</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">uǐ</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">uǒ</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">uě</a></span></td>
+                <td class="wp6"><span><a href="#" onclick="return false">iǎo</a></span></td>
+                <td class="wp6"><span><a href="#" onclick="return false">uǎi</a></span></td>
+                </tr>
+                <tr class="bb">
+                <th scope="col">4성</th>
+                <td><span><a href="#" onclick="return false">à</a></span></td>
+                <td><span><a href="#" onclick="return false">è</a></span></td>
+                <td><span><a href="#" onclick="return false">ì</a></span></td>
+                <td><span><a href="#" onclick="return false">ò</a></span></td>
+                <td><span><a href="#" onclick="return false">ù</a></span></td>
+                <td><span><a href="#" onclick="return false">ǜ</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ài</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ào</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">èi</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">ià</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">iè</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">iò</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">iù</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">òu</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">uà</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">uì</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">uò</a></span></td>
+                <td class="wp3"><span><a href="#" onclick="return false">uè</a></span></td>
+                <td><span><a href="#" onclick="return false">iào</a></span></td>
+                <td><span><a href="#" onclick="return false">uài</a></span></td>
+                </tr>
+                </tbody></table>
+                <p class="del_option"><a href="#" onclick="clickcr(this, 'pyw.del', '', '',event);nhn.search.ClickIME.erase();return false" class="del_char">한 글자 지우기</a><span></span><a href="#" onclick="clickcr(this, 'pyw.delall', '', '',event);nhn.search.ClickIME.clear();return false" class="del_all">모두 지우기</a></p>
+            </div>
+        </li>
+        </ul>
+	<a href="#" onclick="return false" class="btn_clse ime_btn_clse" dictype="cndic">병음 입력기 레이어 닫기</a>
+</div>    
+    
+<div class="ime ime_hanja hanja_div init_input" style="display:none">
+        <ul class="seleted_ime style">
+        <!--[D]필기체에서만 style 값을 추가해주시면 됩니다.-->
+        <li class="lang_ime fc active"><a href="#" onclick="return false" class="lang fc" swinp="1">1획</a></li>
+        <li class="lang_ime"><a href="#" onclick="return false" class="lang" swinp="1">2획</a></li>
+        <li class="lang_ime"><a href="#" onclick="return false" class="lang" swinp="1">3획</a></li>
+        <li class="lang_ime"><a href="#" onclick="return false" class="lang" swinp="1">4획</a></li>
+        <li class="lang_ime"><a href="#" onclick="return false" class="lang" swinp="1">5획</a></li>
+        <li class="lang_ime"><a href="#" onclick="return false" class="lang" swinp="1">6획</a></li>
+        <li class="lang_ime"><a href="#" onclick="return false" class="lang" swinp="1">7획</a></li>
+        <li class="lang_ime"><a href="#" onclick="return false" class="lang" swinp="1">8획</a></li>
+        </ul>
+        <ul class="seleted_device">
+        <li class="fc active">
+            <div class="ime_content hanja">
+                <div class="hanja_box">
+                	<table summary="한자 모양체">
+                    <caption>한자 모양체를 선택해주세요.</caption>
+                    <tbody><tr>
+                    <th scope="col"><div id="stroke1">1획</div></th>
+                    <td>
+                    <ul class="strokelist">
+                    <li>亅<div class="hanja_tultip">갈고리 궐</div></li>
+                    <li>乙<div class="hanja_tultip">새 을</div></li>
+                    <li>一<div class="hanja_tultip">한 일</div></li>
+                    <li>丿<div class="hanja_tultip">삐침 별</div></li>
+                    <li>丶<div class="hanja_tultip">점 주</div></li>
+                    <li>乀<div class="hanja_tultip">파임 불</div></li>
+                    <li>乁<div class="hanja_tultip">흐를 이</div></li>
+                    <li>乚<div class="hanja_tultip">숨을 은</div></li>
+                    <li>乛<div class="hanja_tultip">구결자 야</div></li>
+                    <li>丨<div class="hanja_tultip">뚫을 곤</div></li>
+                    </ul>
+                    </td>                    
+                    </tr>
+                    <tr>
+                    <th scope="col"><div id="stroke2">2획</div></th>
+                    <td>
+                    <ul class="strokelist">
+                    <li>丂<div class="hanja_tultip">공교할 교</div></li>
+                    <li>丄<div class="hanja_tultip">윗 상</div></li>
+                    <li>丅<div class="hanja_tultip">아래 하</div></li>
+                    <li>丆<div class="hanja_tultip">구결자 면</div></li>
+                    <li>丩<div class="hanja_tultip">얽힐 구</div></li>
+                    <li>丷<div class="hanja_tultip">구결자 하</div></li>
+                    <li>勹<div class="hanja_tultip">쌀 포</div></li>
+                    <li>二<div class="hanja_tultip">두 이</div></li>
+                    <li>亻<div class="hanja_tultip">사람 인</div></li>
+                    <li>儿<div class="hanja_tultip">어진 사람 인, 아이 아, 다시 난 이 예</div></li>
+                    <li>入<div class="hanja_tultip">들 입</div></li>
+                    <li>巜<div class="hanja_tultip">큰 도랑 괴</div></li>
+                    <li>㔾<div class="hanja_tultip">병부 절, 이미 이</div></li>
+                    <li>卩<div class="hanja_tultip">병부 절</div></li>
+                    <li>凵<div class="hanja_tultip">입 벌릴 감</div></li>
+                    <li>力<div class="hanja_tultip">힘 력(역)</div></li>
+                    <li>刀<div class="hanja_tultip">칼 도</div></li>
+                    <li>七<div class="hanja_tultip">일곱 칠</div></li>
+                    <li>冫<div class="hanja_tultip">얼음 빙, 엉길 응</div></li>
+                    <li>厶<div class="hanja_tultip">사사 사, 아무 모</div></li>
+                    <li>厂<div class="hanja_tultip">기슭 엄, 기슭 한, 공장 창</div></li>
+                    <li>八<div class="hanja_tultip">여덟 팔</div></li>
+                    <li>几<div class="hanja_tultip">안석 궤, 몇 기, 무릇 범</div></li>
+                    <li>冖<div class="hanja_tultip">덮을 멱</div></li>
+                    <li>匚<div class="hanja_tultip">상자 방</div></li>
+                    <li>又<div class="hanja_tultip">또 우</div></li>
+                    <li>刂<div class="hanja_tultip">칼 도</div></li>
+                    <li>亠<div class="hanja_tultip">돼지해밑 두</div></li>
+                    <li>十<div class="hanja_tultip">열 십</div></li>
+                    <li>乃<div class="hanja_tultip">이에 내, 노 젓는 소리 애</div></li>
+                    <li>匸<div class="hanja_tultip">감출 혜</div></li>
+                    <li>了<div class="hanja_tultip">마칠 료(요)/밝을 료(요)</div></li>
+                    <li>卜<div class="hanja_tultip">점 복/무 복, 짐바리 짐</div></li>
+                    <li>匕<div class="hanja_tultip">비수 비</div></li>
+                    <li>乂<div class="hanja_tultip">벨 예, 징계할 애</div></li>
+                    <li>人<div class="hanja_tultip">사람 인</div></li>
+                    <li>冂<div class="hanja_tultip">멀 경</div></li>
+                    <li>九<div class="hanja_tultip">아홉 구, 모을 규</div></li>
+                    <li>丁<div class="hanja_tultip">고무래 정/장정 정</div></li>
+                    <li>刁<div class="hanja_tultip">조두 조, 칼 도</div></li>
+                    <li>讠<div class="hanja_tultip">말씀 언, 화기애애할 은</div></li>
+                    <li>㐅<div class="hanja_tultip">다섯 오</div></li>
+                    </ul>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="col"><div id="stroke3">3획</div></th>
+                    <td>
+                    <ul class="strokelist">
+                    <li>乊<div class="hanja_tultip">구결자 호</div></li>
+                    <li>习<div class="hanja_tultip">익힐 습</div></li>
+                    <li>乡<div class="hanja_tultip">시골 향</div></li>
+                    <li>亽<div class="hanja_tultip">구결자 라(나)</div></li>
+                    <li>亾<div class="hanja_tultip">망할 망, 없을 무</div></li>
+                    <li>兦<div class="hanja_tultip">망할 망, 없을 무</div></li>
+                    <li>凢<div class="hanja_tultip">무릇 범</div></li>
+                    <li>刄<div class="hanja_tultip">칼날 인, 두 량(양)</div></li>
+                    <li>卂<div class="hanja_tultip">빨리 날 신</div></li>
+                    <li>卪<div class="hanja_tultip">병부 절</div></li>
+                    <li>纟<div class="hanja_tultip">가는 실 멱, 실 사</div></li>
+                    <li>门<div class="hanja_tultip">문 문</div></li>
+                    <li>飞<div class="hanja_tultip">날 비</div></li>
+                    <li>饣<div class="hanja_tultip">밥 식/먹을 식, 먹이 사, 사람 이름 이</div></li>
+                    <li>马<div class="hanja_tultip">말 마</div></li>
+                    <li>㐄<div class="hanja_tultip">걸을 과</div></li>
+                    <li>㔿<div class="hanja_tultip">병부 주</div></li>
+                    <li>丬<div class="hanja_tultip">나무 조각 장, 나무 조각 상</div></li>
+                    <li>干<div class="hanja_tultip">방패 간/줄기 간, 마를 건</div></li>
+                    <li>乞<div class="hanja_tultip">빌 걸, 줄 기</div></li>
+                    <li>巛<div class="hanja_tultip">내 천</div></li>
+                    <li>亍<div class="hanja_tultip">자축거릴 촉, 땅 이름 마</div></li>
+                    <li>夂<div class="hanja_tultip">뒤져 올 치</div></li>
+                    <li>乇<div class="hanja_tultip">부탁할 탁/잎 탁</div></li>
+                    <li>亇<div class="hanja_tultip">망치 마</div></li>
+                    <li>久<div class="hanja_tultip">오랠 구</div></li>
+                    <li>彐<div class="hanja_tultip">고슴도치 머리 계</div></li>
+                    <li>彑<div class="hanja_tultip">고슴도치 머리 계</div></li>
+                    <li>刃<div class="hanja_tultip">칼날 인</div></li>
+                    <li>士<div class="hanja_tultip">선비 사</div></li>
+                    <li>巳<div class="hanja_tultip">뱀 사</div></li>
+                    <li>三<div class="hanja_tultip">석 삼</div></li>
+                    <li>巾<div class="hanja_tultip">수건 건</div></li>
+                    <li>工<div class="hanja_tultip">장인 공</div></li>
+                    <li>口<div class="hanja_tultip">입 구</div></li>
+                    <li>弓<div class="hanja_tultip">활 궁</div></li>
+                    <li>䒑<div class="hanja_tultip">풀 초</div></li>
+                    <li>大<div class="hanja_tultip">클 대, 클 태, 클 다</div></li>
+                    <li>万<div class="hanja_tultip">일만 만</div></li>
+                    <li>亡<div class="hanja_tultip">망할 망, 없을 무</div></li>
+                    <li>尸<div class="hanja_tultip">주검 시</div></li>
+                    <li>小<div class="hanja_tultip">작을 소</div></li>
+                    <li>凡<div class="hanja_tultip">무릇 범</div></li>
+                    <li>兀<div class="hanja_tultip">우뚝할 올</div></li>
+                    <li>于<div class="hanja_tultip">어조사 우, 이지러질 휴</div></li>
+                    <li>亐<div class="hanja_tultip">땅 이름 울, 어조사 우</div></li>
+                    <li>尢<div class="hanja_tultip">절름발이 왕, 더욱 우</div></li>
+                    <li>么<div class="hanja_tultip">작을 요, 작을 마</div></li>
+                    <li>忄<div class="hanja_tultip">마음 심</div></li>
+                    <li>彡<div class="hanja_tultip">터럭 삼, 성씨 섬</div></li>
+                    <li>氵<div class="hanja_tultip">물 수</div></li>
+                    <li>土<div class="hanja_tultip">흙 토, 뿌리 두, 쓰레기 차</div></li>
+                    <li>寸<div class="hanja_tultip">마디 촌</div></li>
+                    <li>勺<div class="hanja_tultip">구기 작</div></li>
+                    <li>丈<div class="hanja_tultip">어른 장</div></li>
+                    <li>叉<div class="hanja_tultip">갈래 차/작살 차</div></li>
+                    <li>幺<div class="hanja_tultip">작을 요</div></li>
+                    <li>屮<div class="hanja_tultip">왼손 좌, 싹날 철, 풀 초</div></li>
+                    <li>女<div class="hanja_tultip">계집 녀(여)</div></li>
+                    <li>广<div class="hanja_tultip">집 엄, 넓을 광, 암자 암</div></li>
+                    <li>上<div class="hanja_tultip">윗 상</div></li>
+                    <li>下<div class="hanja_tultip">아래 하</div></li>
+                    <li>夕<div class="hanja_tultip">저녁 석</div></li>
+                    <li>囗<div class="hanja_tultip">에워쌀 위, 나라 국</div></li>
+                    <li>己<div class="hanja_tultip">몸 기</div></li>
+                    <li>夊<div class="hanja_tultip">천천히 걸을 쇠</div></li>
+                    <li>丫<div class="hanja_tultip">가닥 아</div></li>
+                    <li>也<div class="hanja_tultip">이끼 야/어조사 야, 잇달을 이</div></li>
+                    <li>丌<div class="hanja_tultip">책상 기</div></li>
+                    <li>犭<div class="hanja_tultip">큰 개 견</div></li>
+                    <li>亼<div class="hanja_tultip">삼합 집</div></li>
+                    <li>山<div class="hanja_tultip">메 산</div></li>
+                    <li>廴<div class="hanja_tultip">길게 걸을 인</div></li>
+                    <li>丸<div class="hanja_tultip">둥글 환</div></li>
+                    <li>弋<div class="hanja_tultip">주살 익</div></li>
+                    <li>亏<div class="hanja_tultip">어조사 우, 이지러질 휴</div></li>
+                    <li>子<div class="hanja_tultip">아들 자</div></li>
+                    <li>宀<div class="hanja_tultip">집 면</div></li>
+                    <li>阝<div class="hanja_tultip">언덕 부</div></li>
+                    <li>廾<div class="hanja_tultip">받들 공, 스물 입</div></li>
+                    <li>千<div class="hanja_tultip">일천 천</div></li>
+                    <li>川<div class="hanja_tultip">내 천</div></li>
+                    <li>扌<div class="hanja_tultip">손 수</div></li>
+                    <li>彳<div class="hanja_tultip">조금 걸을 척</div></li>
+                    <li>才<div class="hanja_tultip">재주 재</div></li>
+                    </ul>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="col"><div id="stroke4">4획</div></th>
+                    <td>
+                    <ul class="strokelist">
+                    <li>方<div class="hanja_tultip">모 방/본뜰 방, 괴물 망</div></li>
+                    <li>攴<div class="hanja_tultip">칠 복</div></li>
+                    <li>攵<div class="hanja_tultip">칠 복, 글월 문</div></li>
+                    <li>木<div class="hanja_tultip">나무 목</div></li>
+                    <li>戶<div class="hanja_tultip">집 호/지게 호</div></li>
+                    <li>歹<div class="hanja_tultip">살 바른 뼈 알, 몹쓸 대</div></li>
+                    <li>支<div class="hanja_tultip">지탱할 지</div></li>
+                    <li>止<div class="hanja_tultip">그칠 지</div></li>
+                    <li>耂<div class="hanja_tultip">늙을 로(노)</div></li>
+                    <li>比<div class="hanja_tultip">견줄 비</div></li>
+                    <li>㣺<div class="hanja_tultip">마음 심</div></li>
+                    <li>丑<div class="hanja_tultip">소 축, 추할 추</div></li>
+                    <li>㓁<div class="hanja_tultip">그물 망</div></li>
+                    <li>月<div class="hanja_tultip">달 월</div></li>
+                    <li>艹<div class="hanja_tultip">풀 초</div></li>
+                    <li>片<div class="hanja_tultip">조각 편, 절반 반</div></li>
+                    <li>肀<div class="hanja_tultip">사, 붓 율</div></li>
+                    <li>戈<div class="hanja_tultip">창 과</div></li>
+                    <li>殳<div class="hanja_tultip">몽둥이 수</div></li>
+                    <li>之<div class="hanja_tultip">갈 지</div></li>
+                    <li>爪<div class="hanja_tultip">손톱 조</div></li>
+                    <li>礻<div class="hanja_tultip">보일 시, 땅 귀신 기, 둘 치</div></li>
+                    <li>与<div class="hanja_tultip">더불 여/줄 여</div></li>
+                    <li>火<div class="hanja_tultip">불 화</div></li>
+                    <li>爻<div class="hanja_tultip">사귈 효/가로그을 효</div></li>
+                    <li>欠<div class="hanja_tultip">하품 흠, 이지러질 결</div></li>
+                    <li>爫<div class="hanja_tultip">손톱 조</div></li>
+                    <li>牛<div class="hanja_tultip">소 우</div></li>
+                    <li>日<div class="hanja_tultip">날 일</div></li>
+                    <li>罓<div class="hanja_tultip">그물 망</div></li>
+                    <li>丮<div class="hanja_tultip">잡을 극</div></li>
+                    <li>气<div class="hanja_tultip">기운 기, 보낼 희, 빌 걸</div></li>
+                    <li>手<div class="hanja_tultip">손 수</div></li>
+                    <li>心<div class="hanja_tultip">마음 심</div></li>
+                    <li>氏<div class="hanja_tultip">각시 씨/성씨 씨, 나라 이름 지</div></li>
+                    <li>毛<div class="hanja_tultip">터럭 모</div></li>
+                    <li>辶<div class="hanja_tultip">쉬엄쉬엄 갈 착</div></li>
+                    <li>灬<div class="hanja_tultip">불 화</div></li>
+                    <li>斤<div class="hanja_tultip">근 근/도끼 근</div></li>
+                    <li>犬<div class="hanja_tultip">개 견</div></li>
+                    <li>父<div class="hanja_tultip">아버지 부, 자 보</div></li>
+                    <li>无<div class="hanja_tultip">없을 무</div></li>
+                    <li>毋<div class="hanja_tultip">말 무, 관직 이름 모</div></li>
+                    <li>文<div class="hanja_tultip">글월 문</div></li>
+                    <li>斗<div class="hanja_tultip">말 두/싸울 두, 싸울 투, 싸울 각</div></li>
+                    <li>曰<div class="hanja_tultip">가로 왈</div></li>
+                    <li>王<div class="hanja_tultip">임금 왕</div></li>
+                    <li>牙<div class="hanja_tultip">어금니 아</div></li>
+                    <li>井<div class="hanja_tultip">우물 정</div></li>
+                    <li>爿<div class="hanja_tultip">나무 조각 장, 나무 조각 상</div></li>
+                    <li>水<div class="hanja_tultip">물 수</div></li>
+                    <li>丰<div class="hanja_tultip">예쁠 봉, 풍채 풍</div></li>
+                    <li>厃<div class="hanja_tultip">우러러볼 첨</div></li>
+                    <li>厷<div class="hanja_tultip">팔뚝 굉/클 굉</div></li>
+                    <li>丯<div class="hanja_tultip">풀이 자라 산란할 개, 예쁠 봉, 풍채 풍</div></li>
+                    <li>为<div class="hanja_tultip">하 위/할 위</div></li>
+                    <li>书<div class="hanja_tultip">글 서</div></li>
+                    <li>冃<div class="hanja_tultip">쓰개 모</div></li>
+                    <li>见<div class="hanja_tultip">볼 견, 뵈올 현</div></li>
+                    <li>贝<div class="hanja_tultip">조개 패</div></li>
+                    <li>车<div class="hanja_tultip">수레 차, 수레 거</div></li>
+                    <li>长<div class="hanja_tultip">길 장/어른 장</div></li>
+                    <li>韦<div class="hanja_tultip">가죽 위</div></li>
+                    <li>风<div class="hanja_tultip">바람 풍</div></li>
+                    </ul>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="col"><div id="stroke5">5획</div></th>
+                    <td>
+                    <ul class="strokelist">
+                    <li>业<div class="hanja_tultip">업 업, 북녘 북, 달아날 배</div></li>
+                    <li>东<div class="hanja_tultip">동녘 동</div></li>
+                    <li>㠯<div class="hanja_tultip">써 이</div></li>
+                    <li>巨<div class="hanja_tultip">클 거/어찌 거</div></li>
+                    <li>田<div class="hanja_tultip">밭 전</div></li>
+                    <li>矛<div class="hanja_tultip">창 모</div></li>
+                    <li>生<div class="hanja_tultip">날 생</div></li>
+                    <li>罒<div class="hanja_tultip">그물 망, 넉 사</div></li>
+                    <li>瓦<div class="hanja_tultip">기와 와</div></li>
+                    <li>禾<div class="hanja_tultip">벼 화</div></li>
+                    <li>穴<div class="hanja_tultip">굴 혈, 굴 휼</div></li>
+                    <li>凸<div class="hanja_tultip">볼록할 철</div></li>
+                    <li>氺<div class="hanja_tultip">물 수</div></li>
+                    <li>瓜<div class="hanja_tultip">외 과</div></li>
+                    <li>钅<div class="hanja_tultip">편방자 금</div></li>
+                    <li>鸟<div class="hanja_tultip">새 조, 땅 이름 작, 섬 도</div></li>
+                    <li>龙<div class="hanja_tultip">용 룡(용), 언덕 롱(농), 얼룩 망, 은총 총</div></li>
+                    <li>癶<div class="hanja_tultip">등질 발</div></li>
+                    <li>冉<div class="hanja_tultip">나아갈 염</div></li>
+                    <li>皮<div class="hanja_tultip">가죽 피</div></li>
+                    <li>疋<div class="hanja_tultip">필 필, 발 소</div></li>
+                    <li>禸<div class="hanja_tultip">발자국 유</div></li>
+                    <li>玉<div class="hanja_tultip">구슬 옥</div></li>
+                    <li>用<div class="hanja_tultip">쓸 용</div></li>
+                    <li>丱<div class="hanja_tultip">쌍상투 관, 쇳돌 광</div></li>
+                    <li>疒<div class="hanja_tultip">병들어 기댈 녁(역)</div></li>
+                    <li>矢<div class="hanja_tultip">화살 시</div></li>
+                    <li>示<div class="hanja_tultip">보일 시, 땅 귀신 기, 둘 치</div></li>
+                    <li>立<div class="hanja_tultip">설 립(입)</div></li>
+                    <li>白<div class="hanja_tultip">흰 백</div></li>
+                    <li>玄<div class="hanja_tultip">검을 현</div></li>
+                    <li>皿<div class="hanja_tultip">그릇 명</div></li>
+                    <li>甘<div class="hanja_tultip">달 감</div></li>
+                    <li>目<div class="hanja_tultip">눈 목</div></li>
+                    <li>石<div class="hanja_tultip">돌 석</div></li>
+                    <li>衤<div class="hanja_tultip">옷 의</div></li>
+                    </ul>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="col"><div id="stroke6">6획</div></th>
+                    <td>
+                    <ul class="strokelist">
+                    <li>肉<div class="hanja_tultip">고기 육, 둘레 유</div></li>
+                    <li>襾<div class="hanja_tultip">덮을 아</div></li>
+                    <li>舛<div class="hanja_tultip">어그러질 천</div></li>
+                    <li>羽<div class="hanja_tultip">깃 우, 늦출 호</div></li>
+                    <li>舟<div class="hanja_tultip">배 주</div></li>
+                    <li>衣<div class="hanja_tultip">옷 의</div></li>
+                    <li>艸<div class="hanja_tultip">풀 초</div></li>
+                    <li>行<div class="hanja_tultip">다닐 행, 항렬 항</div></li>
+                    <li>臣<div class="hanja_tultip">신하 신</div></li>
+                    <li>而<div class="hanja_tultip">말 이을 이, 능히 능</div></li>
+                    <li>耳<div class="hanja_tultip">귀 이, 팔대째 손자 잉</div></li>
+                    <li>亚<div class="hanja_tultip">버금 아, 누를 압</div></li>
+                    <li>产<div class="hanja_tultip">낳을 산</div></li>
+                    <li>聿<div class="hanja_tultip">붓 율</div></li>
+                    <li>囟<div class="hanja_tultip">정수리 신</div></li>
+                    <li>臼<div class="hanja_tultip">절구 구</div></li>
+                    <li>竹<div class="hanja_tultip">대 죽</div></li>
+                    <li>血<div class="hanja_tultip">피 혈</div></li>
+                    <li>耒<div class="hanja_tultip">쟁기 뢰(뇌)</div></li>
+                    <li>糸<div class="hanja_tultip">가는 실 멱, 실 사</div></li>
+                    <li>朿<div class="hanja_tultip">가시 자, 묶을 속/약속할 속</div></li>
+                    <li>网<div class="hanja_tultip">그물 망</div></li>
+                    <li>自<div class="hanja_tultip">스스로 자</div></li>
+                    <li>舌<div class="hanja_tultip">혀 설</div></li>
+                    <li>色<div class="hanja_tultip">빛 색</div></li>
+                    <li>老<div class="hanja_tultip">늙을 로(노)</div></li>
+                    <li>虍<div class="hanja_tultip">호피 무늬 호</div></li>
+                    <li>米<div class="hanja_tultip">쌀 미</div></li>
+                    <li>缶<div class="hanja_tultip">장군 부, 두레박 관</div></li>
+                    <li>艮<div class="hanja_tultip">괘 이름 간/그칠 간, 은 은</div></li>
+                    <li>至<div class="hanja_tultip">이를 지</div></li>
+                    <li>虫<div class="hanja_tultip">벌레 훼, 벌레 충, 찔 동</div></li>
+                    <li>兴<div class="hanja_tultip">일 흥</div></li>
+                    <li>冎<div class="hanja_tultip">뼈 발라낼 과</div></li>
+                    <li>页<div class="hanja_tultip">머리 혈, 책 면 엽</div></li>
+                    <li>齐<div class="hanja_tultip">가지런할 제, 재계할 재, 옷자락 자</div></li>
+                    <li>羊<div class="hanja_tultip">양 양</div></li>
+                    </ul>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="col"><div id="stroke7">7획</div></th>
+                    <td>
+                    <ul class="strokelist">
+                    <li>角<div class="hanja_tultip">뿔 각, 사람 이름 록(녹), 꿩 우는 소리 곡</div></li>
+                    <li>車<div class="hanja_tultip">수레 거, 수레 차</div></li>
+                    <li>辵<div class="hanja_tultip">쉬엄쉬엄 갈 착</div></li>
+                    <li>豸<div class="hanja_tultip">벌레 치, 해태 채</div></li>
+                    <li>龟<div class="hanja_tultip">땅 이름 구, 거북 귀, 터질 균</div></li>
+                    <li>豆<div class="hanja_tultip">콩 두</div></li>
+                    <li>里<div class="hanja_tultip">마을 리(이)/속 리(이)</div></li>
+                    <li>見<div class="hanja_tultip">볼 견, 뵈올 현</div></li>
+                    <li>釆<div class="hanja_tultip">분별할 변, 갖출 판, 두루 편, 깎아내릴 폄</div></li>
+                    <li>邑<div class="hanja_tultip">고을 읍, 아첨할 압</div></li>
+                    <li>辰<div class="hanja_tultip">별 진, 때 신</div></li>
+                    <li>走<div class="hanja_tultip">달릴 주</div></li>
+                    <li>身<div class="hanja_tultip">몸 신, 나라 이름 건</div></li>
+                    <li>辛<div class="hanja_tultip">매울 신</div></li>
+                    <li>谷<div class="hanja_tultip">골 곡/곡식 곡, 나라 이름 욕, 벼슬 이름 록(녹)</div></li>
+                    <li>赤<div class="hanja_tultip">붉을 적</div></li>
+                    <li>足<div class="hanja_tultip">발 족, 지나칠 주</div></li>
+                    <li>貝<div class="hanja_tultip">조개 패</div></li>
+                    <li>豕<div class="hanja_tultip">돼지 시</div></li>
+                    <li>麦<div class="hanja_tultip">보리 맥</div></li>
+                    <li>言<div class="hanja_tultip">말씀 언, 화기애애할 은</div></li>
+                    <li>酉<div class="hanja_tultip">닭 유/열째 지지 유</div></li>
+                    </ul>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th scope="col"><div id="stroke8">8획</div></th>
+                    <td>
+                    <ul class="strokelist">
+                    <li>隹<div class="hanja_tultip">새 추, 높을 최</div></li>
+                    <li>非<div class="hanja_tultip">아닐 비/비방할 비</div></li>
+                    <li>隶<div class="hanja_tultip">미칠 이, 미칠 대, 종 례(예)</div></li>
+                    <li>鼡<div class="hanja_tultip">쥐 서</div></li>
+                    <li>雨<div class="hanja_tultip">비 우</div></li>
+                    <li>長<div class="hanja_tultip">길 장/어른 장</div></li>
+                    <li>金<div class="hanja_tultip">성 김, 쇠 금</div></li>
+                    <li>門<div class="hanja_tultip">문 문</div></li>
+                    <li>靑<div class="hanja_tultip">푸를 청</div></li>
+                    <li>黾<div class="hanja_tultip">힘쓸 민, 맹꽁이 맹, 고을 이름 면</div></li>
+                    <li>鱼<div class="hanja_tultip">고기 어/물고기 어</div></li>
+                    <li>齿<div class="hanja_tultip">이 치</div></li>
+                    <li>其<div class="hanja_tultip">그 기</div></li>
+                    <li>阜<div class="hanja_tultip">언덕 부</div></li>
+                    </ul>
+                    </td>
+                    </tr>
+                    </tbody></table>
+                    <div class="scroll" id="strokScrbox">
+                    	<div class="btn_scroll_top"></div>
+                        <div class="scroll_bar"><span></span></div>
+                        <div class="btn_scroll_bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </li>
+        </ul>
+        <a href="#" onclick="return false" class="btn_clse ime_btn_clse" dictype="hanja">모양자 찾기 레이어 닫기</a>
+    </div>
+    
+<style>	
+	.hand_wrt div.cavs{width:129px;height:129px;border:solid 1px #cfcfcf;margin:0 12px 3px 0;position:relative}
+	.hand_wrt div.cavs .cavs_txt{display:block;font-size:11px;color:#2075b6;text-align:center;vertical-align:middle;position:absolute;top:50px;left:30px;}
+ 	.hand_wrt div a.hand_undo{margin-top:3px;font-size:11px;color:#323232;text-decoration:underline}
+ 	.hand_wrt div .bar{padding:0 6px;font-size:11px;color:#d5d5d5}
+ 	.hand_wrt div a.hand_remove{margin-top:3px; font-size:11px;color:#323232;text-decoration:underline}
+ 	.hand_wrt div.cavs{display:table-cell;position:relative;position:relative;width:125px;height:125px;margin:0 12px 10px 0;border:solid 1px #cfcfcf;vertical-align:middle}
+ 	.hand_wrt div.cavs  canvas{position:absolute;top:0;left:0} 	
+ 	.hand_wrt div.cavs .cavs_txt{display:block;font-size:11px;color:#2075b6;text-align:center;vertical-align:middle;position:absolute;top:50px;left:30px;}	
+	
+</style>	
+<div class="ime ime_write handwrite_div init_input" style="display:none">
+	<ul class="seleted_ime">
+		<li class="lang_ime w65 fc" dictype="hanja">
+			<a href="#" onclick="return false" class="lang" swinp="1">한자</a>
+		</li>
+		<li class="lang_ime w65" dictype="jpdic">
+			<a href="#" onclick="return false" class="lang" swinp="1">일본어</a>
+		</li>
+		<li class="lang_ime w65" dictype="cndic">
+			<a href="#" onclick="return false" class="lang" swinp="1">중국어</a>
+		</li>
+	</ul>
+	<ul class="seleted_device" dictype="hanja">
+		<li class="fc active">
+			<div class="wrt_device">
+				<div class="hand_wrt mobile" dictype="mobile" style="display:none;width:132px">
+					<div class="cavs" id="cavs"><canvas width="125px" height="125px"></canvas><span id="showHandWriteText" class="cavs_txt">마우스로<br> 한자를 쓰세요  </span></div>
+		            <div class="wrt_button_wrap">
+		            	<button class="hand_undo" id="handPre">1획 지우기</button><span class="bar">|</span>
+		            	<button class="hand_remove" id="handRemove">전체 지우기</button>
+					</div> 
+				</div>
+				<div class="hand_wrt" dictype="hanja" style="display:none">									
+					
+				</div>
+				<div class="hand_wrt" dictype="jpdic" style="display:none">
+					<h2 class="blind">마우스로 중국어를 쓰세요</h2>
+					<embed src="/flash/jpdic_hand_writing.swf" quality="high" wmode="window" flashvars="mode=ch" bgcolor="#ffffff" width="151" height="164" name="HW_top_frame_jpdic" align="middle" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
+				</div>
+				<div class="hand_wrt" dictype="cndic" style="display:none">
+					<embed src="/flash/cndic_hand_writing.swf" quality="high" wmode="window" flashvars="mode=ch" bgcolor="#ffffff" width="132" height="155" name="HW_top_frame_cndic" align="middle" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
+				</div>
+				<div class="hand_wrt_con hanja" dictype="hanja">
+					<table summary="한자 필기인식 결과">
+						<caption>검색된 한자를 선택해주시면 됩니다.</caption>
+						<tbody>
+							<tr>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr class="h32">
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr class="h32">
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+
+								<td>&nbsp;</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="hand_wrt_con jpdic" dictype="jpdic" style="display:none">
+					<h5>일본한자</h5>
+					<table summary="일본한자 필기인식 결과">
+						<caption>검색된일본한자를 선택해주시면 됩니다.</caption>
+						<tbody>
+							<tr>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr class="h32">
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+						</tbody>
+					</table>
+					<h5>히라가나/가타가나</h5>
+					<table summary="일본어 히라가나/가타가나 필기인식 결과">
+						<caption>검색된 일본어 히라가나/가타가나를 선택해주시면 됩니다.</caption>
+						<tbody>
+							<tr class="h32">
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="hand_wrt_con cndic" dictype="cndic" style="display:none">
+					<table summary="중국어 필기인식 결과">
+						<caption class="blind">검색된 중국어를 선택해주시면 됩니다.</caption>
+						<tbody>
+							<tr>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr class="h32">
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr class="h32">
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			</li>
+	</ul>	
+	<a href="#" onclick="return false" class="btn_clse ime_btn_clse" dictype="handwrite">필기인식기 레이어 닫기</a>
+</div>
+    
+<div class="ime ime_tr trdic_div init_input ime_type_tr" style="display:none" imetype="ime_type_tr"></div>
+    
+<div class="ime ime_ru rudic_div init_input ime_type_ru" style="display:none"></div>
+    
+<div class="ime ime_ge mndic_div init_input ime_type_mn" style="display:none"></div>
+    
+<div class="ime ime_pt ptdic_div init_input ime_type_pt" style="display:none"></div>
+    
+<div class="ime ime_ua uadic_div init_input ime_type_ua" style="display:none"></div>
+    
+<div class="ime ime_al aldic_div init_input ime_type_al" style="display:none"></div>
+    
+<div class="ime ime_ge gedic_div init_input ime_type_ge" style="display:none"></div>
+    
+<div class="ime ime_la ladic_div init_input ime_type_la" style="display:none"></div>
+    
+<div class="ime ime_ko_ms korean_div init_input ime_type_ko" style="display:none" dictype="korean" imetype="ime_type_ko"></div>
+    
+<div class="ime ime_tr itdic_div init_input ime_type_it" style="display:none"></div>
+    
+<div class="ime ime_al rodic_div init_input ime_type_ro" style="display:none"></div>
+    
+<div class="ime ime_al nldic_div init_input ime_type_nl" style="display:none"></div>
+    
+<div class="ime ime_al pldic_div init_input ime_type_pl" style="display:none"></div>
+    
+<div class="ime ime_al svdic_div init_input ime_type_sv" style="display:none"></div>
+    
+<div class="ime ime_al hudic_div init_input ime_type_hu" style="display:none"></div>
+    
+<div class="ime ime_al csdic_div init_input ime_type_cs" style="display:none"></div>
+    
+<div class="ime ime_hi hidic_div init_input ime_type_hi" style="display:none"></div>
+    
+<div class="ime ime_fa fadic_div init_input ime_type_fa" style="display:none"></div>
+    
+<div class="ime ime_th thdic_div init_input ime_type_th" style="display:none"></div>
+    
+<div class="ime ime_ar ardic_div init_input ime_type_ar" style="display:none"></div>
+    
+<div class="ime ime_ne nedic_div init_input ime_type_ne" style="display:none"></div>
+
+<script type="text/javascript">
+  var app = window.app = {};
+
+  app.Dictionaries = function() {
+    this._input = $('#dictionary-search-txt');
+    this._initAutocomplete();
+  };
+  
+  app.Dictionaries.prototype = {
+      _initAutocomplete: function() {
+        this._input
+          .autocomplete({
+            source: '/dictionaries',
+            appendTo: '#dictionary-search-results',
+            select: $.proxy(this._select, this)
+          })
+          .autocomplete('instance')._renderItem = $.proxy(this._render, this);
+      },
+      
+      _select: function(e, ui) {
+        this._input.val(ui.item.main_word + ' - ' + ui.item.meaning);
+        return false;
+      },
+      
+      _render: function(ul, item) {
+        var markup = [
+          // '<span class="img">',
+          //   '<img src="' + item.image_url + '" />',
+          // '</span>',
+          '<span class="main_word">' + item.main_word + '</span>',
+          '<span class="meaning">' + item.meaning + '</span>',
+          '<span class="type">' + item.type + '</span>'
+        ];
+        return $('<li>')
+          .append(markup.join(''))
+          .appendTo(ul);
+      }
+  
+  };
+  $(function() {
+    new app.Dictionaries;
+  });
+</script>
+<!-- body -->
+<script language="javascript">
+	/*
+	참고 : 
+	* 팝업창에서 각 사전명이 나오도록 하기 위해서 아래 ref의 value값을 정하도록 하겠습니다.
+	* '서비스명'에 아래값을 넣어주세요
+	* dev에서 테스트 할때는 dev로, real에서 테스트 할때는 dev를 삭제해주세요.
+	-----------
+	중국어:cndic
+	일본어:jpdic
+	한자:hanja
+	국어:krdic
+	-----------
+	*/
+	 var bannerArray = [{groupId:"1",title:"어학사전1",content:"<a href='http://translate.naver.com/#/ko/en'><img src='http://dicimg.naver.net/dic-home-service/style/201709211025/img/banner57.png' alt='영어 번역기 - 내가 하고 싶은 말을 바로 바로 영어로!' border='0'></a>"}, {groupId:"1",title:"어학사전2",content:"<a href='http://hanja.naver.com'><img src='http://dicimg.naver.net/dic-home-service/style/201709211025/img/banner59.png' alt='한자사전 - 문헌 속 한국한자어도 이젠 네이버 한자사전에서'></a>"}, {groupId:"1",title:"어학사전3",content:"<a href='http://terms.naver.com/list.nhn?cid=41773&categoryId=41776'><img src='http://dicimg.naver.net/dic-home-service/style/201709211025/img/banner49.png' alt='낯선 문학 가깝게 보기 - 세계 35개국 1400개의 숨겨진 걸작문학을 알려드립니다' border='0'></a>"}, {groupId:"2",title:"어학사전4",content:"<a href='http://translate.naver.com/#/zh-CN/ko'><img src='http://dicimg.naver.net/dic-home-service/style/201709211025/img/banner58.png' alt='중국어번역기 - 13억 인구와 자유롭게 소통해보세요!'></a>"}, {groupId:"2",title:"어학사전5",content:"<a href='http://itdic.naver.com'><img src='http://dicimg.naver.net/dic-home-service/style/201709211025/img/banner39.png' alt='이탈리아어사전 출시 - Buon giorno. 이탈리아어사전 지금 만나보세요!' border='0'></a>"}, {groupId:"2",title:"어학사전6",content:"<a href='http://navercast.naver.com' target='_blank'><img src='http://dicimg.naver.net/dic-home-service/style/201709211025/img/banner09.jpg' alt='지식백과 네이버캐스트 전문가와 함께 만들어가는 네이버만의 컨텐츠를 감상하세요.' border='0'></a>"}, {groupId:"3",title:"어학사전7",content:"<a href='http://rodic.naver.com'><img src='http://dicimg.naver.net/dic-home-service/style/201709211025/img/banner35.png' alt='루마니아어사전 출시 - bună dimineața. 루마니아어사전 지금 만나보세요!' border='0'></a>"}, {groupId:"3",title:"어학사전8",content:"<a href='http://svdic.naver.com'><img src='http://dicimg.naver.net/dic-home-service/style/201709211025/img/banner37.png' alt='스웨덴어사전 출시 - hallå 스웨덴어사전 지금 만나보세요!' border='0'></a>"}, {groupId:"3",title:"어학사전9",content:"<a href='http://terms.naver.com/list.nhn?cid=44630&categoryId=44630'><img src='http://dicimg.naver.net/dic-home-service/style/201709211025/img/banner48.png' alt='세계 음식명 백과 - 13억 인구와 자유롭게 소통해보세요!' border='0'></a>"}, {groupId:"4",title:"어학사전11",content:"<a href='javascript:void(0);' id='id_talk_banner'><img src='http://dicimg.naver.net/dic-home-service/style/201709211025/img/banner52.png' alt='영어톡톡 PC버전 출시 - 매일 시간제한 없이 영어 대화 상대를 만나세요!' border='0'></a>"}, {groupId:"4",title:"어학사전10",content:"<a href='http://nldic.naver.com'><img src='http://dicimg.naver.net/dic-home-service/style/201709211025/img/banner34.png' alt='네덜란드어사전 출시 - hallo, 네덜란드어사전 지금 만나보세요!' border='0'></a>"}, {groupId:"4",title:"어학사전12",content:"<a href='http://hudic.naver.com'><img src='http://dicimg.naver.net/dic-home-service/style/201709211025/img/banner44.png' alt='헝가리어사전 출시 - Szervusz 헝가리어사전 지금 만나보세요!'></a>"}, {groupId:"5",title:"어학사전13",content:"<a href='http://cndic.naver.com'><img src='http://dicimg.naver.net/dic-home-service/style/201709211025/img/banner56.png' alt='중국어 예문 분류 추가 - 초중고급별, 시험등급별로 찾아보세요.' border='0'></a>"}, {groupId:"5",title:"어학사전14",content:"<a href='http://thdic.naver.com'><img src='http://dicimg.naver.net/dic-home-service/style/201709211025/img/banner41.png' alt='태국어사전 출시 - สวัสดีครับ 태국어사전 지금 만나보세요!'></a>"}, {groupId:"5",title:"어학사전15",content:"<a href='http://pldic.naver.com'><img src='http://dicimg.naver.net/dic-home-service/style/201709211025/img/banner55.png' alt='폴란드어사전 출시 - salvete! 라틴어사전 지금 만나보세요!' border='0'></a>"}, {groupId:"6",title:"어학사전16",content:"<a href='http://hidic.naver.com'><img src='http://dicimg.naver.net/dic-home-service/style/201709211025/img/banner45.png' alt='힌디어사전 출시 - नमस्ते 힌디어사전 지금 만나보세요!' border='0'></a>"}, {groupId:"6",title:"어학사전17",content:"<a href='http://fadic.naver.com'><img src='http://dicimg.naver.net/dic-home-service/style/201709211025/img/banner42.png' alt='페르시아어사전 출시 - سلام 페르시아어사전 지금 만나보세요!' border='0'></a>"}, {groupId:"6",title:"어학사전18",content:"<a href='http://nedic.naver.com'><img src='http://dicimg.naver.net/dic-home-service/style/201709211025/img/banner50.png' alt='네팔사전 출시 - नमस्‍कार, 네팔어사전 지금 만나보세요!' border='0'></a>"}];
+	 /* var wCookie = document.cookie;
+	 if (wCookie.length >= 1){
+		// bwrdbook_notice_popup_endic(ex. jpdic, endic 등)
+		var rReg = new RegExp('\\bwrdbook_notice_popup_wordbook=([^;]*)(;|$)'); 
+		var rCokie = wCookie.match(rReg);
+		var now = new Date(1502288000000); // 언제까지 팝업을 띄울지 (15년2월28일까지)
+		var nowt = new Date();
+		
+		if(rCokie==null && now.getTime()>nowt.getTime()){
+			window.open('http://dev.dic.naver.com/html/wrdbook_notice.html?ref=wordbook', 'popup1', 'top=100, left=100, width=500, height=225, status=no, scrollbar=no, toolbar=no, menubar=no, location=no, resizable=no'); 
+		}
+	 } */
+	  
+</script>
+
+	</div>
+	<div id="footer">
+		
+
+
+ 
+
+<div class="section_btm">
+       <div class="btm_notice">
+           <h3>공지사항</h3>
+ 
+            
+          		<p name="0" style="display: block;"><a href="http://blog.naver.com/dic_master/221125626772" onclick="clickcr(this, 'btm.notice', '', '',event);" target="_blank">[서비스 개선 소식] 더욱 편리해진 네이버 독일어사전을 만나보세요! </a></p> 
+            
+          		<p name="1" style="display:none;"><a href="http://blog.naver.com/dic_master/221125774298" onclick="clickcr(this, 'btm.notice', '', '',event);" target="_blank">[네이버 아랍어사전] 전문가가 직접 집필한 아랍어-한국어 콘텐츠 약 1만 건이 추가 되었습니다.</a></p> 
+            
+          		<p name="2" style="display:none;"><a href="http://blog.naver.com/dic_master/221113774117" onclick="clickcr(this, 'btm.notice', '', '',event);" target="_blank">자그레브에서 보내는 편지, 크로아티아어사전 편찬 스토리</a></p> 
+            
+          		<p name="3" style="display:none;"><a href="http://blog.naver.com/dic_master/221084784632" onclick="clickcr(this, 'btm.notice', '', '',event);" target="_blank">Good news for Korean learners; New features making NAVER Korea-English Dictionary more useful </a></p> 
+            
+           <a href="#" class="btn_prev" onclick="clickcr(this, 'btm.prev', '', '',event);return false;">이전<span class="blind"> 공지사항 보기</span></a>
+           <a href="#" class="btn_next on" size="4" onclick="clickcr(this, 'btm.next', '', '',event);return false;">다음<span class="blind"> 공지사항 보기</span></a> 
+       </div>
+       <ul class="btm_menu">
+       <li class="fc"><a href="http://blog.naver.com/dic_master/" onclick="clickcr(this, 'btm.blog', '', '',event);" target="_blank">사전 공식 블로그</a></li>
+       <!--<li><a href="http://help.naver.com/ops/step2/faq.nhn?fcatid=12344&tbox=236&faqType=0" onclick="nclk(this, 'fot.help', '', '');" target="_blank">사전 도움말</a></li>
+       <li><a href="http://help.naver.com/ops/step2/mail.nhn?upCatg=236" onclick="nclk(this, 'fot.report', '', '');" target="_blank">오류신고 및 문의하기</a></li>  -->
+       </ul>
+   </div>
+   <div class="f_terms">
+        <dl class="policy">
+        <dt class="blind">네이버 정책 및 약관</dt>
+        <dd class="frst"><a href="http://www.naver.com/rules/service.html" target="_blank" onclick="clickcr(this, 'fot.agreement', '', '',event);">이용약관</a></dd>
+        <dd><a href="http://www.naver.com/rules/privacy.html" target="_blank" onclick="clickcr(this, 'fot.privacy', '', '',event);"><strong>개인정보처리방침</strong></a></dd>
+        <dd><a href="http://www.naver.com/rules/disclaimer.html" target="_blank" onclick="clickcr(this, 'fot.disclaimer', '', '',event);">책임의 한계와 법적고지</a></dd>
+        <dd><a href="#" onclick="clickcr(this, 'fot.help', '', '',event);OPS.viewOPS('ops', {url : 'http://help.naver.com/support/service/main.nhn',  param : 'serviceNo=1000'}); return false;">사전 고객센터</a></dd>
+        <dd><a href="#" onclick="clickcr(this, 'fot.modify', '', '',event);OPS.viewOPS('ops', {url : 'http://help.naver.com/support/contents/contents.nhn', param : 'serviceNo=1000&amp;categoryNo=2702'}); return false;">콘텐츠 수정</a>&nbsp;및 <a href="#" onclick="clickcr(this, 'fot.notify', '', '',event);OPS.viewOPS('ops', {url : 'https://help.naver.com/support/service/main.nhn', param : 'serviceNo=1000&amp;categoryNo=2705'}); return false;">오류 신고</a></dd>
+        </dl>
+       <address>
+           <a href="http://www.nhncorp.com/" target="_blank" class="logo" onclick="clickcr(this, 'fot.nhncorp', '', '',event);"><img src="http://static.naver.net/common/footer/ci_naver.gif" width="63" height="11" alt="NAVER"></a>
+           <em>Copyright ©</em>
+           <a href="http://www.nhncorp.com/" target="_blank" onclick="clickcr(this, 'fot.nhncorp', '', '',event);">NAVER Corp.</a>
+           <span>All Rights Reserved.</span>
+       </address>       
+       
+   </div>
+	</div>
+</div>
+<style>
+.dictionary-search input {
+  width: 100%;
+  font-size: 1em;
+  padding: .5em 1.3em;
+  background: transparent;
+  border: 1px solid #ddd;
+  border-radius: 2em;
+}
+
+.dictionary-search input:focus {
+  border-color: #A5CEF5;
+}
+
+.dictionary-search .results .ui-widget-content {
+  background: #fff;
+  font-size: .9em;
+  padding: .5em 0;
+  border-color: #ddd;
+  box-shadow: 0 .1em .2em rgba(187, 187, 187, 0.64);
+  line-height: 1.2;
+  max-height: 20em;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.dictionary-search .results .ui-menu-item {
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  padding: .4em .6em .4em 6.2em;
+  position: relative;
+  border: 0;
+  border-left: 5px solid transparent;
+  position: relative;
+  height: 6.5em;
+}
+
+.dictionary-search .results .ui-state-focus {
+  background: #fff;
+  border-left-color: #08c;
+  font-weight: 300;
+}
+
+.dictionary-search .results .ui-menu-item .main_word {
+  display: block;
+  color: #555;
+}
+
+.dictionary-search .results .ui-menu-item .meaning {
+  display: block;
+  font-size: .8em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-top: .6em;
+  letter-spacing: 1px;
+}
+
+.dictionary-search .results .ui-menu-item .type {
+  display: block;
+  font-size: .8em;
+  color: #aaa;
+  margin-top: .5em;
+}
+
+.dictionary-search .results .ui-state-focus .type,
+.dictionary-search .results .ui-state-focus .meaning,
+.dictionary-search .results .ui-state-focus .main_word {
+  color: #08c;
+}
+</style>
+<script type="text/javascript">
+//<![CDATA[
+	var nsc = "dic.home";
+	var ccsrv = "cc.naver.com";
+	//var ccsrv = "alpha-cc.naver.com";
+//]]>
+</script>
+<script type="text/javascript">
+	addOnloadEventListener(function () {
+	});
+</script>
+
+
+<!-- success --><div style="position:absolute; left:-9999px; float:left;font-family:arial;font-size:15px;font-weight:bold;height:18px;line-height:17px;margin:4px 0 0;outline:medium none;vertical-align:top; "></div><div style="position:absolute; left:-9999px; float:left;font-family:arial;font-size:15px;font-weight:bold;height:18px;line-height:17px;margin:4px 0 0;outline:medium none;vertical-align:top; "></div><div style="position:absolute; left:-9999px; float:left;font-family:arial;font-size:15px;font-weight:bold;height:18px;line-height:17px;margin:4px 0 0;outline:medium none;vertical-align:top; "></div></body></html>
 <%= link_to 'New Dictionary', new_dictionary_path %>

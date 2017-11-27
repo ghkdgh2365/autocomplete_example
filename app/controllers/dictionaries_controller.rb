@@ -4,7 +4,10 @@ class DictionariesController < ApplicationController
   # GET /dictionaries
   # GET /dictionaries.json
   def index
-    @dictionaries = Dictionary.all
+    respond_to do |format|
+      format.html
+      format.json { @books = Book.search(params[:term]) }
+    end
   end
 
   # GET /dictionaries/1
